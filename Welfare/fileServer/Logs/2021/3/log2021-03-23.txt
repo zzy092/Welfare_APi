@@ -1,0 +1,5 @@
+﻿2021-03-23 17:34:12:[获取首页信息]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Common.tokenCustomerHelper.getCustomerToken() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Common\tokenCustomerHelper.cs:行号 19
+   在 Welfare.Controllers.ShoppingJdController.getHomePageInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 494
+StackTrace:   在 Welfare.Common.tokenCustomerHelper.getCustomerToken() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Common\tokenCustomerHelper.cs:行号 19
+   在 Welfare.Controllers.ShoppingJdController.getHomePageInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 494

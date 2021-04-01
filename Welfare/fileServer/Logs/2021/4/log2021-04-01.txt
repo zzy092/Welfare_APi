@@ -1,0 +1,27 @@
+﻿2021-04-01 09:33:00:[获取购物车]!ex:System.ArgumentNullException: 值不能为 null。
+参数名: source
+   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1055
+StackTrace:   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1055
+2021-04-01 09:34:04:[获取购物车]!ex:System.ArgumentNullException: 值不能为 null。
+参数名: source
+   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1055
+StackTrace:   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1055
+2021-04-01 13:18:41:[购物车:删除商品]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Controllers.ShoppingJdController.deleteSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 964
+StackTrace:   在 Welfare.Controllers.ShoppingJdController.deleteSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 964
+2021-04-01 13:24:05:[购物车:删除商品]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Controllers.ShoppingJdController.deleteSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 964
+StackTrace:   在 Welfare.Controllers.ShoppingJdController.deleteSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 964
+2021-04-01 13:30:31:[购物车:删除商品]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Controllers.ShoppingJdController.deleteSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 964
+StackTrace:   在 Welfare.Controllers.ShoppingJdController.deleteSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 964
+2021-04-01 13:51:08:[购物车:删除商品]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Controllers.ShoppingJdController.deleteSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 964
+StackTrace:   在 Welfare.Controllers.ShoppingJdController.deleteSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 964
+2021-04-01 15:45:13:[购物车:更新商品]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Controllers.ShoppingJdController.updateSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 917
+StackTrace:   在 Welfare.Controllers.ShoppingJdController.updateSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 917

@@ -1,0 +1,1339 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WelfareApi</name>
+    </assembly>
+    <members>
+        <member name="M:Welfare.App_Start.SwaggerControllerDescProvider.#ctor(Swashbuckle.Swagger.ISwaggerProvider,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="swaggerProvider"></param>
+            <param name="xml">xml文档路径</param>
+        </member>
+        <member name="M:Welfare.App_Start.SwaggerControllerDescProvider.GetControllerDesc">
+            <summary>
+            从API文档中读取控制器描述
+            </summary>
+            <returns>所有控制器描述</returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getCorpSale(System.Int32)">
+            <summary>
+            公司折扣
+            </summary>
+            <param name="corpid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getShoppingToken">
+            <summary>
+            获取商城 token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.isMasterAddress(System.Int32,System.String@)">
+            <summary>
+            是否有有默认收货地址
+            </summary>
+            <param name="customerid"></param>
+            <param name="areaIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.isMasterAddress(System.Int32,System.String@,System.String@)">
+            <summary>
+            是否有有默认收货地址
+            </summary>
+            <param name="customerid"></param>
+            <param name="areaIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getStock(System.String,System.String)">
+            <summary>
+            获取库存
+            </summary>
+            <param name="skuNums"></param>
+            <param name="area"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getCheckAreaLimt(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            特定区域是否可售
+            </summary>
+            <param name="skuIds"></param>
+            <param name="province"></param>
+            <param name="city"></param>
+            <param name="county"></param>
+            <param name="town"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getSKuCheck(System.String)">
+            <summary>
+            是否可售
+            </summary>
+            <param name="skuIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getSkuState(System.String)">
+            <summary>
+            上下架
+            </summary>
+            <param name="skuids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getSkuPrice(System.String)">
+            <summary>
+            价格
+            </summary>
+            <param name="skuids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getSkuName(System.Int64)">
+            <summary>
+            返回sku商品名
+            </summary>
+            <param name="sku"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getSkuDetail(System.Int64)">
+            <summary>
+            商品详情
+            </summary>
+            <param name="sku"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getOrderBaseInfo(System.Int64)">
+            <summary>
+            订单详情
+            </summary>
+            <param name="sku"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getOrderParentInfo(System.Int64)">
+            <summary>
+            父单
+            </summary>
+            <param name="sku"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getOrderInfo(System.Int64)">
+            <summary>
+            拆单
+            </summary>
+            <param name="sku"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getSkuImages(System.String)">
+            <summary>
+            商品图片
+            </summary>
+            <param name="sku"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.confirmOrder(System.Int64)">
+            <summary>
+            确认欲占库存订单
+            </summary>
+            <param name="jdorderId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getSkuSimilar(System.Int64)">
+            <summary>
+            同类商品
+            </summary>
+            <param name="skuId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.jdCommon.getParentId(System.Int32)">
+            <summary>
+            获取分类 父id
+            </summary>
+            <param name="cid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.phoneMsgHelper.isPhoneMsgCode(System.String,System.String,System.String@)">
+            <summary>
+            短信验证
+            </summary>
+            <param name="phone"></param>
+            <param name="code">验证码</param>
+            <param name="errMsg">错误码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Common.tokenCustomerHelper.getCustomerToken(System.String,System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="token"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Welfare.Common.jdApi">
+            <summary>
+            京东自营 接口API
+            </summary>
+        </member>
+        <member name="F:Welfare.Common.jdApi.urlProductDetail">
+            <summary>
+            商品详情url
+            </summary>
+        </member>
+        <member name="F:Welfare.Common.jdApi.urlProductImage">
+            <summary>
+            商品图片
+            </summary>
+        </member>
+        <member name="F:Welfare.Common.jdApi.urlSeachProduct">
+            <summary>
+            搜索商品
+            </summary>
+        </member>
+        <member name="F:Welfare.Common.jdApi.urlSimilarSku">
+            <summary>
+            商品分类
+            </summary>
+        </member>
+        <member name="F:Welfare.Common.jdApi.urlProductPrice">
+            <summary>
+            商品价格
+            </summary>
+        </member>
+        <member name="F:Welfare.Common.jdApi.urlProductState">
+            <summary>
+            上下架
+            </summary>
+        </member>
+        <member name="F:Welfare.Common.jdApi.urlProductCheck">
+            <summary>
+            是否可售
+            </summary>
+        </member>
+        <member name="F:Welfare.Common.jdApi.urlAreaCheck">
+            <summary>
+            商品在特定区域是否可售
+            </summary>
+        </member>
+        <member name="F:Welfare.Common.jdApi.urlStock">
+            <summary>
+            库存
+            </summary>
+        </member>
+        <member name="F:Welfare.Common.jdApi.urlSubmitOrder">
+            <summary>
+            提交订单
+            </summary>
+        </member>
+        <member name="F:Welfare.Common.jdApi.urlOrderInfo">
+            <summary>
+            提交订单
+            </summary>
+        </member>
+        <member name="F:Welfare.Common.jdApi.urlOrderConfirm">
+            <summary>
+            确认预占库存订单
+            </summary>
+        </member>
+        <member name="M:Welfare.Common.jdApi.requesUrl(System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            接口复用
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.AdminController.addSkus(System.String,System.String,System.Int32)">
+            <summary>
+            根据分类 添加商品
+            </summary>
+            <param name="cid3"></param>
+            <param name="addNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.getArea(System.String,System.Int32)">
+            <summary>
+            获取地址
+            </summary>
+            <param name="token"></param>
+            <param name="parentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.getCategory(System.String,System.Int32)">
+            <summary>
+            商品分类
+            </summary>
+            <param name="token"></param>
+            <param name="parentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.seachGoods(Welfare.Models.JDRequest.parameterSeach)">
+            <summary>
+            商品搜索
+            </summary>
+            <param name="sPamars"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.goodsDetail(System.Int64)">
+            <summary>
+            商品详情
+            </summary>
+            <param name="sku"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.goodsImages(System.String)">
+            <summary>
+            商品图片
+            </summary>
+            <param name="sku"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.skuGoodsSimilar(System.Int64)">
+            <summary>
+            同类sku
+            </summary>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.goodsPrice(System.String)">
+            <summary>
+            商品价格[每次最多100个,逗号分隔]
+            </summary>
+            <param name="sku"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.goodsState(System.String)">
+            <summary>
+            商品上下架[每次最多100个,逗号分隔]
+            </summary>
+            <param name="skus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.goodsCheck(System.String)">
+            <summary>
+            是否可售[每次最多100个,逗号分隔]
+            </summary>
+            <param name="skuIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.goodsCheckAreaLimit(Welfare.Models.JDRequest.parameterCheckAreaLimit)">
+            <summary>
+            特定区域是否可售[每次最多100个,逗号分隔]
+            </summary>
+            <param name="paramsAreaCheck"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.goodsStock(Welfare.Models.JDRequest.parametereStock)">
+            <summary>
+            库存[每次最多100个,逗号分隔]
+            </summary>
+            <param name="paramStock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.getAllGoodsDteil(System.Int64)">
+            <summary>
+            详情汇总[商品详情、商品图片等等]
+            </summary>
+            <param name="sku"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.getImgUrl(System.String)">
+            <summary>
+            获取字符串中img的url集合
+            </summary>
+            <param name="content">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.getHomePageProductInfo(System.Int32,System.Int32)">
+            <summary>
+            首页商品
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.getHomePageInfo">
+            <summary>
+            获取首页信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.addSkuCart(Model.Shopping_Cart)">
+            <summary>
+            [添加购物车]某商品
+            </summary>
+            <param name="shoppingCart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.updateSkuCart(Model.Shopping_Cart)">
+            <summary>
+            购物车[更新商品数量]
+            </summary>
+            <param name="sku"></param>
+            <param name="addNumber">增加数量（例如：1或-1）</param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.deleteSkuCart(Model.Shopping_Cart)">
+            <summary>
+            [删除购物车]某商品
+            </summary>
+            <param name="shoppingCart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.getCartAllInfo">
+            <summary>
+            购物车[全部信息]
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.ShoppingJdController.getCartTips(System.String)">
+            <summary>
+            购物车Tips
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.LoginController.accountLogin(WelfareApi.Models.Login.ELoginModel)">
+            <summary>
+            帐号登陆
+            </summary>
+            <param name="eModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.LoginController.mobilePhoneMessageLogin(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            短信登陆
+            </summary>
+            <param name="Phone">手机号</param>
+            <param name="code">验证码</param>
+            <param name="corpid">公司id</param>
+            <param name="deviceType">设备类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.LoginController.accountOutLogin(System.String)">
+            <summary>
+            退出登陆
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.LoginController.sendPhoneMessage(System.String,System.Int32)">
+            <summary>
+            发送短信
+            </summary>
+            <param name="phone"></param>
+            <param name="corpid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.LoginController.getUserToken(Model.Welfare_Customer)">
+            <summary>
+            获取最新 Token
+            </summary>
+            <param name="customer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.LoginController.updateUserToken(System.String,System.Int32@)">
+            <summary>
+            退出登陆
+            </summary>
+            <param name="token"></param>
+            <param name="corpid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.LoginController.addLoginLog(System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            登陆日志
+            </summary>
+            <param name="customerId">用户id</param>
+            <param name="deviceType">设备类型 1：手机 2：电脑 3：平板 </param>
+            <param name="loginType">登陆方式 1：短信 2：帐号</param>
+            <param name="isLoginok">是否登陆成功</param>
+        </member>
+        <member name="T:Welfare.Controllers.OrderJdController">
+            <summary>
+            订单业务[京东自营]
+            </summary>
+        </member>
+        <member name="M:Welfare.Controllers.OrderJdController.submitOrder(Welfare.Models.JDRequest.pamarSubitOrder)">
+            <summary>
+            提交订单
+            </summary>
+            <param name="token"></param>
+            <param name="addressId">收获地址id</param>
+            <param name="skus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.OrderJdController.payOrder(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            支付订单
+            </summary>
+            <param name="token"></param>
+            <param name="orderMastId"></param>
+             <param name="payMethod">支付方式</param>
+            <param name="code">短信验证码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.OrderJdController.getJDApiInfo(System.String,System.Int64)">
+            <summary>
+            京东接口查询
+            </summary>
+            <param name="token"></param>
+            <param name="jdorderid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.OrderJdController.getOrders(System.String,System.Int32,System.Int32)">
+            <summary>
+            订单列表
+            </summary>
+            <param name="token"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.OrderJdController.getOderDetail(System.String,System.Int32)">
+            <summary>
+            订单详情
+            </summary>
+            <param name="token"></param>
+            <param name="orderMastId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.OrderJdController.muban">
+            <summary>
+            复制粘贴用
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.OrderJdController.updateUserPoint(Model.Welfare_Customer,System.Decimal,Model.Shopping_Order_Master,System.String,System.Int32)">
+            <summary>
+            修改积分
+            </summary>
+            <param name="customer">用户信息</param>
+            <param name="payMoney">变动金额</param>
+            <param name="OrderMaster">订单信息</param>
+            <param name="logMessage">日志详情</param>
+            <param name="type">1:支出  2：入账</param>
+        </member>
+        <member name="M:Welfare.Controllers.OrderJdController.isOrderPriceChange(System.Int32,System.Decimal@,System.String@)">
+            <summary>
+            校验库里价格
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.OrderJdController.getSubmitParams(System.String,System.String,System.String,Model.Shopping_Customer_Address)">
+            <summary>
+            
+            </summary>
+            <param name="orderPriceSnap"></param>
+            <param name="sku"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.OrderJdController.isAllSellPrice(System.String,System.Collections.Generic.List{Welfare.Models.JDRequest.OrderPriceSnap}@,System.String@)">
+            <summary>
+            获取下单 价格校验 信息
+            </summary>
+            <param name="skuids"></param>
+            <param name="outListOsnap"></param>
+            <param name="outErrorMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.OrderJdController.isAllSkuDetail(System.Int64[],System.Collections.Generic.List{Model.Shopping_Cart},System.Collections.Generic.List{Welfare.Models.JDResponsSerialize.productDetail}@,System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="skus"></param>
+            <param name="outProductDetail"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.OrderJdController.isSkuCfgCategory(System.Int32,System.Collections.Generic.List{Welfare.Models.JDResponsSerialize.productDetail},System.String@)">
+            <summary>
+            sku分类 是否在 分类配置表中存在
+            </summary>
+            <param name="corpid"></param>
+            <param name="listProductDetail"></param>
+            <param name="outErrorMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.UserController.addUserAddress(System.String,Welfare.Models.UserAddress.pamarUserAddress)">
+            <summary>
+            添加地址
+            </summary>
+            <param name="token"></param>
+            <param name="pamarAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.UserController.deleteUserAddress(System.String,System.Int32)">
+            <summary>
+            删除地址
+            </summary>
+            <param name="token"></param>
+            <param name="addressId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.UserController.updateUserAddress(System.String,Welfare.Models.UserAddress.pamarUserAddress)">
+            <summary>
+            修改地址
+            </summary>
+            <param name="token"></param>
+            <param name="paramAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.UserController.setMasterAddress(System.String,System.Int32)">
+            <summary>
+            设置默认地址
+            </summary>
+            <param name="token"></param>
+            <param name="addressId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.UserController.getAllUserAddress(System.String)">
+            <summary>
+            全部地址
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.UserController.getUserInfo">
+            <summary>
+            获取个人中心信息
+            </summary>
+            <param name="deviceType">设备类型 1手机 2pc</param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.UserController.muban">
+            <summary>
+            复制粘贴用
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Welfare.Models.Order.showOrder">
+            <summary>
+            父与子
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.UserAddress.pamarUserAddress">
+            <summary>
+            添加收获地址
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.UserAddress.showUserAddress">
+            <summary>
+            添加收获地址
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.Cart.showCartInfo.isPriceChange">
+            <summary>
+            价格是否变动
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.Cart.showCartInfo.stockStateDesc">
+            <summary>
+            库存信息
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDRequest.parameterSeach">
+            <summary>
+            搜索商品
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSeach.keyword">
+            <summary>
+            搜索关键字，需要编码
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSeach.catId">
+            <summary>
+            分类Id,只支持三级类目Id 
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSeach.pageIndex">
+            <summary>
+            当前第几页
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSeach.pageSize">
+            <summary>
+            当前页显示
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSeach.min">
+            <summary>
+            价格区间搜索，低价
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSeach.max">
+            <summary>
+            价格区间搜索，高价
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSeach.brands">
+            <summary>
+            品牌搜索 多个品牌以逗号分隔，需要编码
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSeach.cid1">
+            <summary>
+            一级分类
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSeach.cid2">
+            <summary>
+            二级分类
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSeach.sortType">
+            <summary>
+            销量降序="sale_desc" ||  价格升序="price_asc" || 价格降序="price_desc" || 上架时间降序="winsdate_desc" ||按销量排序_15天销售额="sort_totalsales15_desc"; || 按15日销量排序="sort_days_15_qtty_desc" || 按30日销量排序="sort_days_30_qtty_desc" || 按15日销售额排序="sort_days_15_gmv_desc" || 按30日销售额排序="sort_days_30_gmv_desc"
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSeach.priceCol">
+            <summary>
+            价格汇总 priceCol=”yes”
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSeach.extAttrCol">
+            <summary>
+            扩展属性汇总 priceCol=”yes”
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSeach.areaIds">
+            <summary>
+            地址 1,2810,51081
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSeach.redisStore">
+            <summary>
+            带库存有货
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDRequest.parameterProductDetail">
+            <summary>
+            商品详情
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDRequest.parameterProductImages">
+            <summary>
+            商品图片
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDRequest.parameterProductSimilar">
+            <summary>
+            同类sku 
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDRequest.parameterProductPrice">
+            <summary>
+            商品价格
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDRequest.parameterSkuState">
+            <summary>
+            上下架
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDRequest.parameterSkuCheck">
+            <summary>
+            是否可售
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDRequest.parameterCheckAreaLimit">
+            <summary>
+            商品在特定区域是否可售
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDRequest.parametereStock">
+            <summary>
+            库存
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parametereStock.skuNums">
+             <summary>
+             商品和数量  [{skuId: 569172,num:101}]。
+            “{skuId: 569172,num:101}”为1条记录，此参数最多传入100条记录
+             </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parametereStock.area">
+            <summary>
+            格式：1_0_0 (分别代表1、2、3级地址)
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDRequest.parameterSkuNums">
+            <summary>
+            库存 skuNums参数
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.thirdOrder">
+            <summary>
+            第三方的订单单号，必须在100字符以内
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.sku">
+            <summary>
+            下单商品信息 例如:[{"skuId":100004017833,"num":1,"bNeedGift":false,"bNeedAnnex ":true,"yanbao":[]}]
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.name">
+            <summary>
+            收货人姓名，最多20个字符
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.province">
+            <summary>
+            一级地址编码
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.city">
+            <summary>
+            二级地址编码
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.county">
+            <summary>
+            三级地址编码
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.town">
+            <summary>
+            四级级地址编码 有就传 没有填 0
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.address">
+            <summary>
+            详细地址
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.mobile">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.invoiceState">
+            <summary>
+            开票方式(2为集中开票，4 订单完成后开票)
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.invoiceType">
+            <summary>
+            发票类型（2增值税专用发票；3 电子票）
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.selectedInvoiceTitle">
+            <summary>
+            发票类型：4：个人，5：单位
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.invoiceContent">
+            <summary>
+            1:明细，100：大类 备注:若增值税专用发票则只能选1 明细
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.doOrderPriceMode">
+            <summary>
+            1价格校验（建议传1）；0 不需要
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.orderPriceSnap">
+            <summary>
+            Json格式的数据  [{"price":1299, "skuId":100004017833}]
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.isUseBalance">
+            <summary>
+            使用余额paymentType=4时，此值固定是1其他支付方式0
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.submitState">
+            <summary>
+            是否预占库存，0是预占库存（需要调用确认订单接口），1是不预占库存
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.invoicePhone">
+            <summary>
+            收票人电话
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.parameterSubmitOrder.paymentType">
+            <summary>
+            paymentType=4
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDRequest.submitParamSku">
+            <summary>
+            sku附加信息
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.submitParamSku.bNeedGift">
+            <summary>
+            表示附件，必须传true
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDRequest.submitParamSku.bNeedAnnex">
+            <summary>
+            表示赠品，true要赠品，false不要赠品;（传true是当订单主商品存在赠品活动且赠品还有库存时生成订单会有对应的赠品）
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDRequest.OrderPriceSnap">
+            <summary>
+            提交订单时 价格校验提交参数
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDResponsSerialize.resultSeach">
+            <summary>
+            jd搜索商品接口 响应
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDResponsSerialize.SeachData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.SeachData.resultCount">
+            <summary>
+            搜索结果总记录数量
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.SeachData.pageCount">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.SeachData.pageSize">
+            <summary>
+            每页大小
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.SeachData.pageIndex">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.SeachData.brandAggregate">
+            <summary>
+            品牌汇总信息
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.SeachData.categoryAggregate">
+            <summary>
+            相关分类汇总信息
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.SeachData.hitResult">
+            <summary>
+            搜索命中数据json字符串，返回的图片地址拼接规则与查询商品详情规则一致
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.SeachData.priceIntervalAggregate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDResponsSerialize.PriceSection">
+            <summary>
+            价格区间
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDResponsSerialize.BrandVo">
+            <summary>
+            品牌汇总信息
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.BrandVo.id">
+            <summary>
+            品牌id
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.BrandVo.name">
+            <summary>
+            品牌名称
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.BrandVo.pinyin">
+            <summary>
+            品牌首字母拼音
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDResponsSerialize.CategoryVo">
+            <summary>
+            相关分类汇总信息
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.CategoryVo.catId">
+            <summary>
+            分类Id
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.CategoryVo.count">
+            <summary>
+            分类下商品数量
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.CategoryVo.name">
+            <summary>
+            分类名称
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.CategoryVo.weight">
+            <summary>
+            分类权重
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDResponsSerialize.hitResult">
+            <summary>
+            搜索命中数据json字符串，返回的图片地址拼接规则与查询商品详情规则一致
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.brand">
+            <summary>
+            品牌名称
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.imageUrl">
+            <summary>
+            商品图片url
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.wareName">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.wareId">
+            <summary>
+            商品id
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.warePId">
+            <summary>
+            商品spuid
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.brandId">
+            <summary>
+            品牌id
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.cid1">
+            <summary>
+            一级类目id
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.cid2">
+            <summary>
+            二级类目id
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.catId">
+            <summary>
+            三级类目id
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.wstate">
+            <summary>
+            上柜状态，1.有效
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.wyn">
+            <summary>
+            商品状态，1.有效	
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.cid1Name">
+            <summary>
+            一级分类名
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.cid2Name">
+            <summary>
+            二级分类名
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.catName">
+            <summary>
+            三级分类名
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.hitResult.synonyms">
+            <summary>
+            商品同义词
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.productDetail.saleUnit">
+            <summary>
+            售卖单位
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.productDetail.weight">
+            <summary>
+            重量
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.productDetail.productArea">
+            <summary>
+            产地
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.productDetail.wareQD">
+            <summary>
+            包装清单
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.productDetail.imagePath">
+            <summary>
+            主图
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.productDetail.param">
+            <summary>
+            规格参数
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.productDetail.state">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.productDetail.sku">
+            <summary>
+            商品编号
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.productDetail.brandName">
+            <summary>
+            品牌名称
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.productDetail.upc">
+            <summary>
+            UPC码  区分实物、图书、音像、三种场景
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.productDetail.category">
+            <summary>
+            分类 示例"670;729;4837
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.productDetail.name">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.productDetail.introduction">
+            <summary>
+            商品详情页大字段 
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.jdProductImages.id">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.jdProductImages.path">
+            <summary>
+            图片路径 如3.3商品详情页面返回的图片地址一致。
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.jdProductImages.created">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.jdProductImages.isPrimary">
+            <summary>
+            是否主图 1：是 0：否
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.jdProductImages.orderSort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.jdProductImages.position">
+            <summary>
+            位置
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.jdProductImages.type">
+            <summary>
+            类型（0方图  1长图【服装】）
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.jdProductImages.features">
+            <summary>
+            特征
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.SimilarProduct.dim">
+            <summary>
+            维度
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.SimilarProduct.saleName">
+            <summary>
+            销售名称
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.SimilarProduct.saleAttrList">
+            <summary>
+            商品销售标签销售属性下可能只有一个标签，此种场景可以选择显示销售名称和标签，也可以不显示
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.SaleAttr.imagePath">
+            <summary>
+            标签图片地址
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.SaleAttr.saleValue">
+            <summary>
+            标签名称
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.SaleAttr.skuIds">
+            <summary>
+            当前标签下的同类商品skuId
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.sellPrice.price">
+            <summary>
+            京东销售价
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.sellPrice.tax">
+            <summary>
+            税率
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.sellPrice.taxPrice">
+            <summary>
+            税额
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.sellPrice.jdPrice">
+            <summary>
+            京东价
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.sellPrice.nakedPrice">
+            <summary>
+            未税价
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.skuState.state">
+            <summary>
+            1：上架，0：下架
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.skuCheck.name">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.skuCheck.saleState">
+            <summary>
+            是否可售，1：是，0：否
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.stock.stockStateId">
+            <summary>
+            库存状态编号。参考枚举值：
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.stock.stockStateDesc">
+             <summary>
+             库存状态描述。以下为stockStateId不同时，此字段不同的返回值：
+            33 有货 现货-下单立即发货
+            39 有货 在途-正在内部配货，预计2 ~6天到达本仓库
+            40 有货 可配货-下单后从有货仓库配货
+            36 预订
+            34 无货
+            99 无货开预定，此时desc返回的数值代表预计到货天数，并且该功能需要依赖合同上有无货开预定权限的用户，到货周期略长，谨慎采用该功能。
+             </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.stock.remainNum">
+            <summary>
+            剩余数量  当此值为-1时，为未查询到
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.submitOrder.orderPrice">
+            <summary>
+            订单总金额
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.submitOrder.orderNakedPrice">
+            <summary>
+            订单未税金额
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.submitOrder.orderTaxPrice">
+            <summary>
+            订单税额
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.BizSku.category">
+            <summary>
+            商品分类编号
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.BizSku.price">
+            <summary>
+            商品单价
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.BizSku.tax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.BizSku.splitFreight">
+            <summary>
+            运费拆分价格
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.BizSku.taxPrice">
+            <summary>
+            商品税额
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.BizSku.nakedPrice">
+            <summary>
+            商品未税价
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.BizSku.type">
+            <summary>
+            商品类型：0普通、1附件、2赠品
+            </summary>
+        </member>
+        <member name="P:Welfare.Models.JDResponsSerialize.BizSku.oid">
+            <summary>
+            主商品skuid，如果本身是主商品，则oid为0
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDResponsSerialize.resultOrderParentInfo">
+            <summary>
+            父单详情
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDResponsSerialize.resultOrderInfo">
+            <summary>
+            拆单详情
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.Result">
+            <summary>
+            API 返回模板
+            </summary>
+        </member>
+        <member name="T:Welfare.Models.JDResult">
+            <summary>
+            JD 返回模板
+            </summary>
+        </member>
+        <member name="P:WelfareApi.Models.Login.paramLogin.password">
+            <summary>
+            密码md5
+            </summary>
+        </member>
+        <member name="P:WelfareApi.Models.Login.paramLogin.deviceType">
+            <summary>
+            设备类型 1 手机 2 pc
+            </summary>
+        </member>
+        <member name="P:WelfareApi.Models.Login.paramLogin.refresh_expires">
+            <summary>
+            过期时间戳
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,10 @@
+﻿2021-03-18 14:40:50:[订单支付]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Controllers.OrderJdController.updateUserPoint(Welfare_Customer customer, Decimal payMoney, Shopping_Order_Master OrderMaster, String logMessage, Int32 type) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 626
+   在 Welfare.Controllers.OrderJdController.payOrder(String token, Int32 orderMastId, Int32 payMethod, String code) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 371
+StackTrace:   在 Welfare.Controllers.OrderJdController.updateUserPoint(Welfare_Customer customer, Decimal payMoney, Shopping_Order_Master OrderMaster, String logMessage, Int32 type) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 626
+   在 Welfare.Controllers.OrderJdController.payOrder(String token, Int32 orderMastId, Int32 payMethod, String code) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 371
+2021-03-18 17:41:00:[获取购物车]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Common.tokenCustomerHelper.getCustomerToken(String token) 位置 D:\code\Welfare\Welfare\Common\tokenCustomerHelper.cs:行号 19
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo(String token) 位置 D:\code\Welfare\Welfare\Controllers\ShoppingJdController.cs:行号 715
+StackTrace:   在 Welfare.Common.tokenCustomerHelper.getCustomerToken(String token) 位置 D:\code\Welfare\Welfare\Common\tokenCustomerHelper.cs:行号 19
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo(String token) 位置 D:\code\Welfare\Welfare\Controllers\ShoppingJdController.cs:行号 715

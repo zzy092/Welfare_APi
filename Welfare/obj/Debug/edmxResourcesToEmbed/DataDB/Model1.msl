@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Employee_Welfare_DBModelStoreContainer" CdmEntityContainer="Employee_Welfare_DBEntities">
+    <EntitySetMapping Name="Shopping_Area">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Area">
+        <MappingFragment StoreEntitySet="Shopping_Area">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="area_id" ColumnName="area_id" />
+          <ScalarProperty Name="area_name" ColumnName="area_name" />
+          <ScalarProperty Name="area_level" ColumnName="area_level" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shopping_Category">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Category">
+        <MappingFragment StoreEntitySet="Shopping_Category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="category_catId" ColumnName="category_catId" />
+          <ScalarProperty Name="parentId" ColumnName="parentId" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+          <ScalarProperty Name="category_level" ColumnName="category_level" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shopping_Customer_Address">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Customer_Address">
+        <MappingFragment StoreEntitySet="Shopping_Customer_Address">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="address_user_name" ColumnName="address_user_name" />
+          <ScalarProperty Name="address_email" ColumnName="address_email" />
+          <ScalarProperty Name="address_phone" ColumnName="address_phone" />
+          <ScalarProperty Name="address_fixed_telephone" ColumnName="address_fixed_telephone" />
+          <ScalarProperty Name="province_name" ColumnName="province_name" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="county_name" ColumnName="county_name" />
+          <ScalarProperty Name="town_name" ColumnName="town_name" />
+          <ScalarProperty Name="area_str_ids" ColumnName="area_str_ids" />
+          <ScalarProperty Name="customer_address" ColumnName="customer_address" />
+          <ScalarProperty Name="is_master" ColumnName="is_master" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shopping_Order_Detail">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Order_Detail">
+        <MappingFragment StoreEntitySet="Shopping_Order_Detail">
+          <ScalarProperty Name="order_detail_id" ColumnName="order_detail_id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="cid_1" ColumnName="cid_1" />
+          <ScalarProperty Name="cid_2" ColumnName="cid_2" />
+          <ScalarProperty Name="cid_3" ColumnName="cid_3" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="skuId" ColumnName="skuId" />
+          <ScalarProperty Name="num" ColumnName="num" />
+          <ScalarProperty Name="goods_pt_price" ColumnName="goods_pt_price" />
+          <ScalarProperty Name="goods_jd_price" ColumnName="goods_jd_price" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="oid" ColumnName="oid" />
+          <ScalarProperty Name="goods_type" ColumnName="goods_type" />
+          <ScalarProperty Name="splitFreight" ColumnName="splitFreight" />
+          <ScalarProperty Name="taxPrice" ColumnName="taxPrice" />
+          <ScalarProperty Name="nakedPrice" ColumnName="nakedPrice" />
+          <ScalarProperty Name="jd_OrderId" ColumnName="jd_OrderId" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shopping_Order_Master">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Order_Master">
+        <MappingFragment StoreEntitySet="Shopping_Order_Master">
+          <ScalarProperty Name="corp_sale" ColumnName="corp_sale" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="order_sn" ColumnName="order_sn" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="shopping_user_name" ColumnName="shopping_user_name" />
+          <ScalarProperty Name="shopping_phone" ColumnName="shopping_phone" />
+          <ScalarProperty Name="province_name" ColumnName="province_name" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="county_name" ColumnName="county_name" />
+          <ScalarProperty Name="town_name" ColumnName="town_name" />
+          <ScalarProperty Name="user_address" ColumnName="user_address" />
+          <ScalarProperty Name="payment_method" ColumnName="payment_method" />
+          <ScalarProperty Name="order_pt_money" ColumnName="order_pt_money" />
+          <ScalarProperty Name="order_jd_money" ColumnName="order_jd_money" />
+          <ScalarProperty Name="payment_money" ColumnName="payment_money" />
+          <ScalarProperty Name="freight" ColumnName="freight" />
+          <ScalarProperty Name="order_status" ColumnName="order_status" />
+          <ScalarProperty Name="is_pay" ColumnName="is_pay" />
+          <ScalarProperty Name="pay_time" ColumnName="pay_time" />
+          <ScalarProperty Name="orderNakedPrice" ColumnName="orderNakedPrice" />
+          <ScalarProperty Name="orderTaxPrice" ColumnName="orderTaxPrice" />
+          <ScalarProperty Name="jd_type" ColumnName="jd_type" />
+          <ScalarProperty Name="jd_state" ColumnName="jd_state" />
+          <ScalarProperty Name="orderState" ColumnName="orderState" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shopping_Product_Info">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Product_Info">
+        <MappingFragment StoreEntitySet="Shopping_Product_Info">
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_price" ColumnName="product_price" />
+          <ScalarProperty Name="product_jdPrice" ColumnName="product_jdPrice" />
+          <ScalarProperty Name="product_imagePath" ColumnName="product_imagePath" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="taxPrice" ColumnName="taxPrice" />
+          <ScalarProperty Name="brandName" ColumnName="brandName" />
+          <ScalarProperty Name="cid_1" ColumnName="cid_1" />
+          <ScalarProperty Name="cid_2" ColumnName="cid_2" />
+          <ScalarProperty Name="cid_3" ColumnName="cid_3" />
+          <ScalarProperty Name="is_sku_state" ColumnName="is_sku_state" />
+          <ScalarProperty Name="is_sale_check" ColumnName="is_sale_check" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shopping_Token">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Token">
+        <MappingFragment StoreEntitySet="Shopping_Token">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="token_type_name" ColumnName="token_type_name" />
+          <ScalarProperty Name="access_token" ColumnName="access_token" />
+          <ScalarProperty Name="refresh_token" ColumnName="refresh_token" />
+          <ScalarProperty Name="update_time_stamp" ColumnName="update_time_stamp" />
+          <ScalarProperty Name="expires_in" ColumnName="expires_in" />
+          <ScalarProperty Name="refresh_token_expires" ColumnName="refresh_token_expires" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Welfare_Corporation">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Corporation">
+        <MappingFragment StoreEntitySet="Welfare_Corporation">
+          <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+          <ScalarProperty Name="corp_name" ColumnName="corp_name" />
+          <ScalarProperty Name="corp_sname" ColumnName="corp_sname" />
+          <ScalarProperty Name="corp_people_name" ColumnName="corp_people_name" />
+          <ScalarProperty Name="corp_people_gender" ColumnName="corp_people_gender" />
+          <ScalarProperty Name="corp_people_phone" ColumnName="corp_people_phone" />
+          <ScalarProperty Name="corp_email" ColumnName="corp_email" />
+          <ScalarProperty Name="corp_number" ColumnName="corp_number" />
+          <ScalarProperty Name="logo_path" ColumnName="logo_path" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Welfare_Corporation_Point_Log">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Corporation_Point_Log">
+        <MappingFragment StoreEntitySet="Welfare_Corporation_Point_Log">
+          <ScalarProperty Name="point_id" ColumnName="point_id" />
+          <ScalarProperty Name="corpid_id" ColumnName="corpid_id" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="refer_number" ColumnName="refer_number" />
+          <ScalarProperty Name="change_point" ColumnName="change_point" />
+          <ScalarProperty Name="before_point" ColumnName="before_point" />
+          <ScalarProperty Name="after_point" ColumnName="after_point" />
+          <ScalarProperty Name="point_log_type" ColumnName="point_log_type" />
+          <ScalarProperty Name="point_remark" ColumnName="point_remark" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Welfare_Customer">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Customer">
+        <MappingFragment StoreEntitySet="Welfare_Customer">
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+          <ScalarProperty Name="login_name" ColumnName="login_name" />
+          <ScalarProperty Name="login_password" ColumnName="login_password" />
+          <ScalarProperty Name="customer_state" ColumnName="customer_state" />
+          <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="identity_card_type" ColumnName="identity_card_type" />
+          <ScalarProperty Name="identity_card_no" ColumnName="identity_card_no" />
+          <ScalarProperty Name="mobile_phone" ColumnName="mobile_phone" />
+          <ScalarProperty Name="customer_email" ColumnName="customer_email" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="entry_time" ColumnName="entry_time" />
+          <ScalarProperty Name="user_money" ColumnName="user_money" />
+          <ScalarProperty Name="user_point" ColumnName="user_point" />
+          <ScalarProperty Name="is_test_customer" ColumnName="is_test_customer" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Welfare_Customer_Point_Log">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Customer_Point_Log">
+        <MappingFragment StoreEntitySet="Welfare_Customer_Point_Log">
+          <ScalarProperty Name="point_id" ColumnName="point_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="refer_number" ColumnName="refer_number" />
+          <ScalarProperty Name="change_point" ColumnName="change_point" />
+          <ScalarProperty Name="before_point" ColumnName="before_point" />
+          <ScalarProperty Name="after_point" ColumnName="after_point" />
+          <ScalarProperty Name="point_log_type" ColumnName="point_log_type" />
+          <ScalarProperty Name="point_remark" ColumnName="point_remark" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Welfare_Department">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Department">
+        <MappingFragment StoreEntitySet="Welfare_Department">
+          <ScalarProperty Name="dep_id" ColumnName="dep_id" />
+          <ScalarProperty Name="dep_name" ColumnName="dep_name" />
+          <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Welfare_Customer_Login_Log">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Customer_Login_Log">
+        <MappingFragment StoreEntitySet="Welfare_Customer_Login_Log">
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="is_loginok" ColumnName="is_loginok" />
+          <ScalarProperty Name="device_type" ColumnName="device_type" />
+          <ScalarProperty Name="login_type" ColumnName="login_type" />
+          <ScalarProperty Name="login_ip" ColumnName="login_ip" />
+          <ScalarProperty Name="login_time" ColumnName="login_time" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="login_id" ColumnName="login_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Welfare_Customer_Token">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Customer_Token">
+        <MappingFragment StoreEntitySet="Welfare_Customer_Token">
+          <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+          <ScalarProperty Name="refresh_token_expires" ColumnName="refresh_token_expires" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="expires_in" ColumnName="expires_in" />
+          <ScalarProperty Name="token_time" ColumnName="token_time" />
+          <ScalarProperty Name="access_token" ColumnName="access_token" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Welfare_Mobile_Phone_Message">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Mobile_Phone_Message">
+        <MappingFragment StoreEntitySet="Welfare_Mobile_Phone_Message">
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="expires_in" ColumnName="expires_in" />
+          <ScalarProperty Name="verification_code" ColumnName="verification_code" />
+          <ScalarProperty Name="phone_message" ColumnName="phone_message" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cfg_Corp_Phone_Message_Header">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Cfg_Corp_Phone_Message_Header">
+        <MappingFragment StoreEntitySet="Cfg_Corp_Phone_Message_Header">
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="message_header" ColumnName="message_header" />
+          <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cfg_Corp_Sale">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Cfg_Corp_Sale">
+        <MappingFragment StoreEntitySet="Cfg_Corp_Sale">
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="sale_value" ColumnName="sale_value" />
+          <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cfg_Corp_Category">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Cfg_Corp_Category">
+        <MappingFragment StoreEntitySet="Cfg_Corp_Category">
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+          <ScalarProperty Name="category_detail" ColumnName="category_detail" />
+          <ScalarProperty Name="catClass" ColumnName="catClass" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="parentId" ColumnName="parentId" />
+          <ScalarProperty Name="catId" ColumnName="catId" />
+          <ScalarProperty Name="corp_category_id" ColumnName="corp_category_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shopping_Cart">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Cart">
+        <MappingFragment StoreEntitySet="Shopping_Cart">
+          <ScalarProperty Name="sale_value" ColumnName="sale_value" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="product_pt_price" ColumnName="product_pt_price" />
+          <ScalarProperty Name="product_jd_price" ColumnName="product_jd_price" />
+          <ScalarProperty Name="product_img" ColumnName="product_img" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_num" ColumnName="product_num" />
+          <ScalarProperty Name="skuid" ColumnName="skuid" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

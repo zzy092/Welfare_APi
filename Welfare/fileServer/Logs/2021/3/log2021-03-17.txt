@@ -1,0 +1,52 @@
+﻿2021-03-17 16:39:43:[提交订单]!ex:System.ArgumentNullException: 值不能为 null。
+参数名: source
+   在 System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   在 Welfare.Controllers.OrderJdController.submitOrder(String token, Int32 addressId, List`1 skus, Decimal payMoney) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 48
+StackTrace:   在 System.Linq.Enumerable.Select[TSource,TResult](IEnumerable`1 source, Func`2 selector)
+   在 Welfare.Controllers.OrderJdController.submitOrder(String token, Int32 addressId, List`1 skus, Decimal payMoney) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 48
+2021-03-17 16:49:04:[提交订单]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Controllers.OrderJdController.submitOrder(pamarSubitOrder paramModel) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 46
+StackTrace:   在 Welfare.Controllers.OrderJdController.submitOrder(pamarSubitOrder paramModel) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 46
+2021-03-17 16:51:39:[提交订单]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Controllers.OrderJdController.submitOrder(pamarSubitOrder paramModel) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 46
+StackTrace:   在 Welfare.Controllers.OrderJdController.submitOrder(pamarSubitOrder paramModel) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 46
+2021-03-17 16:52:03:[提交订单]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Common.tokenCustomerHelper.getCustomerToken(String token) 位置 D:\code\Welfare\Welfare\Common\tokenCustomerHelper.cs:行号 19
+   在 Welfare.Controllers.OrderJdController.submitOrder(pamarSubitOrder paramModel) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 46
+StackTrace:   在 Welfare.Common.tokenCustomerHelper.getCustomerToken(String token) 位置 D:\code\Welfare\Welfare\Common\tokenCustomerHelper.cs:行号 19
+   在 Welfare.Controllers.OrderJdController.submitOrder(pamarSubitOrder paramModel) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 46
+2021-03-17 16:54:24:[提交订单]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Common.tokenCustomerHelper.getCustomerToken(String token) 位置 D:\code\Welfare\Welfare\Common\tokenCustomerHelper.cs:行号 19
+   在 Welfare.Controllers.OrderJdController.submitOrder(pamarSubitOrder paramModel) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 46
+StackTrace:   在 Welfare.Common.tokenCustomerHelper.getCustomerToken(String token) 位置 D:\code\Welfare\Welfare\Common\tokenCustomerHelper.cs:行号 19
+   在 Welfare.Controllers.OrderJdController.submitOrder(pamarSubitOrder paramModel) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 46
+2021-03-17 16:55:58:[提交订单]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Controllers.OrderJdController.submitOrder(pamarSubitOrder paramModel) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 138
+StackTrace:   在 Welfare.Controllers.OrderJdController.submitOrder(pamarSubitOrder paramModel) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 138
+2021-03-17 23:42:28:[获取订单详情]!ex:System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   在 System.Int64.Parse(String s)
+   在 Welfare.Controllers.OrderJdController.getOderDetail(String token, Int32 orderMastId) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 357
+StackTrace:   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   在 System.Int64.Parse(String s)
+   在 Welfare.Controllers.OrderJdController.getOderDetail(String token, Int32 orderMastId) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 357
+2021-03-17 23:42:59:[获取订单详情]!ex:System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   在 System.Int64.Parse(String s)
+   在 Welfare.Controllers.OrderJdController.getOderDetail(String token, Int32 orderMastId) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 357
+StackTrace:   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   在 System.Int64.Parse(String s)
+   在 Welfare.Controllers.OrderJdController.getOderDetail(String token, Int32 orderMastId) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 357
+2021-03-17 23:45:35:[获取订单详情]!ex:System.ArgumentException: 未找到属性设置方法。
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   在 Tools.DictionaryHelper.ClassT4ClassW[T,W](T modelT, W modelW) 位置 D:\code\Welfare\Tools\DictionaryHelper.cs:行号 53
+   在 Welfare.Controllers.OrderJdController.getOderDetail(String token, Int32 orderMastId) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 362
+StackTrace:   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   在 Tools.DictionaryHelper.ClassT4ClassW[T,W](T modelT, W modelW) 位置 D:\code\Welfare\Tools\DictionaryHelper.cs:行号 53
+   在 Welfare.Controllers.OrderJdController.getOderDetail(String token, Int32 orderMastId) 位置 D:\code\Welfare\Welfare\Controllers\OrderJdController.cs:行号 362

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Welfare</name>
+    </assembly>
+    <members>
+        <member name="M:Welfare.Controllers.LoginController.ConvertDateTiemp(System.DateTime)">
+            <summary>
+            获取时间戳（精确到毫秒）
+            </summary>
+            <param name="time">时间</param>
+        </member>
+        <member name="M:Welfare.Controllers.LoginController.GetTime(System.String)">
+            <summary>
+            时间戳转为C#格式时间
+            </summary>
+            <param name="timeStamp"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

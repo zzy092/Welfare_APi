@@ -1,0 +1,26 @@
+﻿2021-03-29 14:33:40:[用户登陆]!ex:System.Runtime.Serialization.SerializationException: 反序列化对象 属于类型 WelfareApi.Models.Login.paramLogin 时出现错误。不能将值“2021-03-29T06:38:40.041Z”作为类型“Int64”来分析。 ---> System.Xml.XmlException: 不能将值“2021-03-29T06:38:40.041Z”作为类型“Int64”来分析。 ---> System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ReadContentAsLong()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ReadContentAsLong()
+   在 System.Xml.XmlDictionaryReader.ReadElementContentAsLong()
+   在 System.Runtime.Serialization.XmlReaderDelegator.ReadElementContentAsLong()
+   在 ReadparamLoginFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString[] )
+   在 System.Runtime.Serialization.Json.JsonClassDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Type declaredType, DataContract dataContract, String name, String ns)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)
+   在 System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\LoginController.cs:行号 50
+StackTrace:   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\LoginController.cs:行号 50

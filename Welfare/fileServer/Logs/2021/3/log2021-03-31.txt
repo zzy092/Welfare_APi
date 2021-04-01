@@ -1,0 +1,114 @@
+﻿2021-03-31 11:15:43:[获取购物车]!ex:System.ArgumentNullException: 值不能为 null。
+参数名: source
+   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1029
+StackTrace:   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1029
+2021-03-31 17:46:56:[购物车:添加商品]!ex:System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 DAL.BaseDAL`1.Add(T entity) 位置 D:\code\Welfare_New_System\WelfareApi\DAL\BaseDAL.cs:行号 40
+   在 BLL.BaseBLL`1.Add(T model) 位置 D:\code\Welfare_New_System\WelfareApi\BLL\BaseBLL.cs:行号 21
+   在 Welfare.Controllers.ShoppingJdController.addSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 857
+StackTrace:   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 DAL.BaseDAL`1.Add(T entity) 位置 D:\code\Welfare_New_System\WelfareApi\DAL\BaseDAL.cs:行号 40
+   在 BLL.BaseBLL`1.Add(T model) 位置 D:\code\Welfare_New_System\WelfareApi\BLL\BaseBLL.cs:行号 21
+   在 Welfare.Controllers.ShoppingJdController.addSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 857
+2021-03-31 17:48:32:[购物车:添加商品]!ex:System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 DAL.BaseDAL`1.Add(T entity) 位置 D:\code\Welfare_New_System\WelfareApi\DAL\BaseDAL.cs:行号 40
+   在 BLL.BaseBLL`1.Add(T model) 位置 D:\code\Welfare_New_System\WelfareApi\BLL\BaseBLL.cs:行号 21
+   在 Welfare.Controllers.ShoppingJdController.addSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 857
+StackTrace:   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 DAL.BaseDAL`1.Add(T entity) 位置 D:\code\Welfare_New_System\WelfareApi\DAL\BaseDAL.cs:行号 40
+   在 BLL.BaseBLL`1.Add(T model) 位置 D:\code\Welfare_New_System\WelfareApi\BLL\BaseBLL.cs:行号 21
+   在 Welfare.Controllers.ShoppingJdController.addSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 857
+2021-03-31 17:49:57:[购物车:添加商品]!ex:System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 DAL.BaseDAL`1.Add(T entity) 位置 D:\code\Welfare_New_System\WelfareApi\DAL\BaseDAL.cs:行号 40
+   在 BLL.BaseBLL`1.Add(T model) 位置 D:\code\Welfare_New_System\WelfareApi\BLL\BaseBLL.cs:行号 21
+   在 Welfare.Controllers.ShoppingJdController.addSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 857
+StackTrace:   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 DAL.BaseDAL`1.Add(T entity) 位置 D:\code\Welfare_New_System\WelfareApi\DAL\BaseDAL.cs:行号 40
+   在 BLL.BaseBLL`1.Add(T model) 位置 D:\code\Welfare_New_System\WelfareApi\BLL\BaseBLL.cs:行号 21
+   在 Welfare.Controllers.ShoppingJdController.addSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 857
+2021-03-31 17:50:12:[购物车:添加商品]!ex:System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 DAL.BaseDAL`1.Add(T entity) 位置 D:\code\Welfare_New_System\WelfareApi\DAL\BaseDAL.cs:行号 40
+   在 BLL.BaseBLL`1.Add(T model) 位置 D:\code\Welfare_New_System\WelfareApi\BLL\BaseBLL.cs:行号 21
+   在 Welfare.Controllers.ShoppingJdController.addSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 857
+StackTrace:   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 DAL.BaseDAL`1.Add(T entity) 位置 D:\code\Welfare_New_System\WelfareApi\DAL\BaseDAL.cs:行号 40
+   在 BLL.BaseBLL`1.Add(T model) 位置 D:\code\Welfare_New_System\WelfareApi\BLL\BaseBLL.cs:行号 21
+   在 Welfare.Controllers.ShoppingJdController.addSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 857
+2021-03-31 17:59:37:[购物车:添加商品]!ex:System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 DAL.BaseDAL`1.Add(T entity) 位置 D:\code\Welfare_New_System\WelfareApi\DAL\BaseDAL.cs:行号 40
+   在 BLL.BaseBLL`1.Add(T model) 位置 D:\code\Welfare_New_System\WelfareApi\BLL\BaseBLL.cs:行号 21
+   在 Welfare.Controllers.ShoppingJdController.addSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 857
+StackTrace:   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 DAL.BaseDAL`1.Add(T entity) 位置 D:\code\Welfare_New_System\WelfareApi\DAL\BaseDAL.cs:行号 40
+   在 BLL.BaseBLL`1.Add(T model) 位置 D:\code\Welfare_New_System\WelfareApi\BLL\BaseBLL.cs:行号 21
+   在 Welfare.Controllers.ShoppingJdController.addSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 857
+2021-03-31 18:01:56:[购物车:添加商品]!ex:System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 DAL.BaseDAL`1.Add(T entity) 位置 D:\code\Welfare_New_System\WelfareApi\DAL\BaseDAL.cs:行号 40
+   在 BLL.BaseBLL`1.Add(T model) 位置 D:\code\Welfare_New_System\WelfareApi\BLL\BaseBLL.cs:行号 21
+   在 Welfare.Controllers.ShoppingJdController.addSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 857
+StackTrace:   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 DAL.BaseDAL`1.Add(T entity) 位置 D:\code\Welfare_New_System\WelfareApi\DAL\BaseDAL.cs:行号 40
+   在 BLL.BaseBLL`1.Add(T model) 位置 D:\code\Welfare_New_System\WelfareApi\BLL\BaseBLL.cs:行号 21
+   在 Welfare.Controllers.ShoppingJdController.addSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 857
+2021-03-31 18:07:44:[获取购物车]!ex:System.ArgumentNullException: 值不能为 null。
+参数名: source
+   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1055
+StackTrace:   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1055
+2021-03-31 18:07:44:[获取购物车]!ex:System.ArgumentNullException: 值不能为 null。
+参数名: source
+   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1055
+StackTrace:   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1055
+2021-03-31 18:07:48:[获取购物车]!ex:System.ArgumentNullException: 值不能为 null。
+参数名: source
+   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1055
+StackTrace:   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1055
+2021-03-31 18:09:34:[获取购物车]!ex:System.ArgumentNullException: 值不能为 null。
+参数名: source
+   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1055
+StackTrace:   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1055
+2021-03-31 18:11:08:[获取购物车]!ex:System.ArgumentNullException: 值不能为 null。
+参数名: source
+   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1055
+StackTrace:   在 System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Welfare.Controllers.ShoppingJdController.getCartAllInfo() 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 1055

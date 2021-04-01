@@ -1,0 +1,12 @@
+﻿2021-03-28 01:09:24:[购物车:更新商品]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Controllers.ShoppingJdController.updateSkuCart(Int64 sku, Int32 addNumber) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 914
+StackTrace:   在 Welfare.Controllers.ShoppingJdController.updateSkuCart(Int64 sku, Int32 addNumber) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 914
+2021-03-28 01:56:10:[购物车:更新商品]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Controllers.ShoppingJdController.updateSkuCart(Int64 sku, Int32 addNumber) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 914
+StackTrace:   在 Welfare.Controllers.ShoppingJdController.updateSkuCart(Int64 sku, Int32 addNumber) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 914
+2021-03-28 02:12:28:[购物车:更新商品]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Controllers.ShoppingJdController.updateSkuCart(Int64 sku, Int32 addNumber) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 914
+StackTrace:   在 Welfare.Controllers.ShoppingJdController.updateSkuCart(Int64 sku, Int32 addNumber) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 914
+2021-03-28 02:30:59:[购物车:更新商品]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Controllers.ShoppingJdController.updateSkuCart(Int64 sku, Int32 addNumber) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 914
+StackTrace:   在 Welfare.Controllers.ShoppingJdController.updateSkuCart(Int64 sku, Int32 addNumber) 位置 D:\code\Welfare_New_System\WelfareApi\Welfare\Controllers\ShoppingJdController.cs:行号 914

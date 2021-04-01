@@ -1,0 +1,1509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Employee_Welfare_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cfg_Corp_Category">
+          <Key>
+            <PropertyRef Name="corp_category_id" />
+          </Key>
+          <Property Name="corp_category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="catId" Type="int" Nullable="false" />
+          <Property Name="parentId" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="catClass" Type="int" Nullable="false" />
+          <Property Name="category_detail" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="corp_id" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cfg_Corp_ConfirmOrder">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="corpid" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cfg_Corp_Phone_Message_Header">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="corp_id" Type="int" Nullable="false" />
+          <Property Name="message_header" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" />
+        </EntityType>
+        <EntityType Name="Cfg_Corp_Sale">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="corp_id" Type="int" Nullable="false" />
+          <Property Name="sale_value" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cfg_Notice_Customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="notice_id" Type="int" Nullable="false" />
+          <Property Name="is_read" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="ip_address" Type="varchar" MaxLength="20" />
+          <Property Name="device_type" Type="int" />
+        </EntityType>
+        <EntityType Name="Cfg_Shopping_HomePage_Category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="corp_id" Type="int" Nullable="false" />
+          <Property Name="cat_id" Type="int" Nullable="false" />
+          <Property Name="cat_img" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="cat_level" Type="int" Nullable="false" />
+          <Property Name="catids" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="cat_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="orderSort" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cfg_Shopping_HomePage_Img">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="corpid" Type="int" Nullable="false" />
+          <Property Name="device_type" Type="int" Nullable="false" />
+          <Property Name="carouse_img" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="orderSort" Type="int" Nullable="false" />
+          <Property Name="link" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Cfg_Welfare_Customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="welfare_id" Type="int" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="is_timeout" Type="int" />
+        </EntityType>
+        <EntityType Name="Shopping_Area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="area_id" Type="int" Nullable="false" />
+          <Property Name="area_name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="area_level" Type="int" Nullable="false" />
+          <Property Name="parent_id" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shopping_Cart">
+          <Key>
+            <PropertyRef Name="cart_id" />
+          </Key>
+          <Property Name="cart_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="skuid" Type="bigint" Nullable="false" />
+          <Property Name="product_num" Type="int" Nullable="false" />
+          <Property Name="product_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="product_img" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="product_jdprice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="product_ptprice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="sale_value" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="product_price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shopping_Category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="category_catId" Type="int" Nullable="false" />
+          <Property Name="parentId" Type="int" Nullable="false" />
+          <Property Name="category_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="category_level" Type="int" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shopping_Customer_Address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="address_user_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="address_email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="address_phone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="address_fixed_telephone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="province_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="city_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="county_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="town_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="area_str_ids" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="customer_address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="is_master" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shopping_JD_Order_Log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jdOrderId" Type="bigint" Nullable="false" />
+          <Property Name="thirdOrder" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="orderPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="orderNakedPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="orderTaxPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="sku" Type="text" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="freight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="submitState" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shopping_Order_Detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="order_id" Type="int" Nullable="false" />
+          <Property Name="goods_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="skuId" Type="bigint" Nullable="false" />
+          <Property Name="num" Type="int" Nullable="false" />
+          <Property Name="goods_pt_price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="goods_jd_price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="tax" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="oid" Type="int" Nullable="false" />
+          <Property Name="goods_type" Type="int" Nullable="false" />
+          <Property Name="splitFreight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="taxPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="nakedPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="jd_OrderId" Type="bigint" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="img_path" Type="varchar" MaxLength="100" />
+          <Property Name="cid_1" Type="int" Nullable="false" />
+          <Property Name="cid_2" Type="int" Nullable="false" />
+          <Property Name="cid_3" Type="int" Nullable="false" />
+          <Property Name="cid_1_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="cid_2_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="cid_3_name" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shopping_Order_Master">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="order_sn" Type="bigint" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="shopping_user_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="shopping_phone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="province_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="city_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="county_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="town_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="user_address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="payment_method" Type="int" Nullable="false" />
+          <Property Name="order_pt_money" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="order_jd_money" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="freight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="jd_order_state" Type="int" Nullable="false" />
+          <Property Name="is_pay" Type="int" Nullable="false" />
+          <Property Name="pay_time" Type="datetime" />
+          <Property Name="orderNakedPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="orderTaxPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="is_order_split" Type="int" Nullable="false" />
+          <Property Name="logistics_state" Type="int" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="corp_sale" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="thirdOrder" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shopping_Product_Info">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sku" Type="bigint" Nullable="false" />
+          <Property Name="product_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="product_price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="product_jdPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="product_imagePath" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="category" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="tax" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="taxPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="brandName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cid_1" Type="int" Nullable="false" />
+          <Property Name="cid_2" Type="int" Nullable="false" />
+          <Property Name="cid_3" Type="int" Nullable="false" />
+          <Property Name="is_sku_state" Type="int" Nullable="false" />
+          <Property Name="is_sale_check" Type="int" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shopping_Token">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="token_type_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="access_token" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="refresh_token" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="update_time_stamp" Type="bigint" Nullable="false" />
+          <Property Name="expires_in" Type="int" Nullable="false" />
+          <Property Name="refresh_token_expires" Type="bigint" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Welfare_Corporation">
+          <Key>
+            <PropertyRef Name="corp_id" />
+          </Key>
+          <Property Name="corp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="corp_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="corp_sname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="corp_people_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="corp_people_gender" Type="int" Nullable="false" />
+          <Property Name="corp_people_phone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="corp_email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="corp_number" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="logo_path" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="create_time" Type="datetime" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Welfare_Corporation_Point_Log">
+          <Key>
+            <PropertyRef Name="point_id" />
+          </Key>
+          <Property Name="point_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="corpid_id" Type="int" Nullable="false" />
+          <Property Name="source" Type="int" Nullable="false" />
+          <Property Name="refer_number" Type="int" Nullable="false" />
+          <Property Name="change_point" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="before_point" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="after_point" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="point_log_type" Type="int" Nullable="false" />
+          <Property Name="point_remark" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Welfare_Customer">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customer_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="login_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="login_password" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="customer_state" Type="int" Nullable="false" />
+          <Property Name="corp_id" Type="int" Nullable="false" />
+          <Property Name="department_id" Type="int" Nullable="false" />
+          <Property Name="identity_card_type" Type="int" Nullable="false" />
+          <Property Name="identity_card_no" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="mobile_phone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="customer_email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="gender" Type="int" Nullable="false" />
+          <Property Name="birthday" Type="datetime" />
+          <Property Name="entry_time" Type="datetime" />
+          <Property Name="user_money" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="user_point" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="is_test_customer" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="head_img" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Welfare_Customer_Login_Log">
+          <Key>
+            <PropertyRef Name="login_id" />
+          </Key>
+          <Property Name="login_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="login_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="login_time" Type="datetime" Nullable="false" />
+          <Property Name="login_ip" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="login_type" Type="int" Nullable="false" />
+          <Property Name="device_type" Type="int" Nullable="false" />
+          <Property Name="is_loginok" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="corp_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Welfare_Customer_Point_Log">
+          <Key>
+            <PropertyRef Name="point_id" />
+          </Key>
+          <Property Name="point_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="source" Type="int" Nullable="false" />
+          <Property Name="refer_number" Type="int" Nullable="false" />
+          <Property Name="change_point" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="after_point" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="before_point" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="point_log_type" Type="int" Nullable="false" />
+          <Property Name="point_remark" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Welfare_Customer_Token">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="access_token" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="token_time" Type="bigint" Nullable="false" />
+          <Property Name="expires_in" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="refresh_token_expires" Type="bigint" Nullable="false" />
+          <Property Name="corp_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Welfare_Department">
+          <Key>
+            <PropertyRef Name="dep_id" />
+          </Key>
+          <Property Name="dep_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dep_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="corp_id" Type="int" Nullable="false" />
+          <Property Name="parent_id" Type="int" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Welfare_Enum">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="welfare_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="welfare_tage" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="welfare_img" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="vue_route" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="route_request" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Welfare_Mobile_Phone_Message">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="phone_message" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="verification_code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="expires_in" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="ip_address" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Welfare_Notice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="notice_type" Type="int" Nullable="false" />
+          <Property Name="notice_title" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="notice_detail" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="start_time" Type="datetime" Nullable="false" />
+          <Property Name="end_time" Type="datetime" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Welfare_System_Bug_Log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="source_sn" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="log_detail" Type="text" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Nullable="false" />
+          <Property Name="modified_time" Type="datetime" Nullable="false" />
+          <Property Name="is_delete" Type="int" Nullable="false" />
+          <Property Name="ex_message" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Employee_Welfare_DBModelStoreContainer">
+          <EntitySet Name="Cfg_Corp_Category" EntityType="Self.Cfg_Corp_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cfg_Corp_ConfirmOrder" EntityType="Self.Cfg_Corp_ConfirmOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cfg_Corp_Phone_Message_Header" EntityType="Self.Cfg_Corp_Phone_Message_Header" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cfg_Corp_Sale" EntityType="Self.Cfg_Corp_Sale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cfg_Notice_Customer" EntityType="Self.Cfg_Notice_Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cfg_Shopping_HomePage_Category" EntityType="Self.Cfg_Shopping_HomePage_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cfg_Shopping_HomePage_Img" EntityType="Self.Cfg_Shopping_HomePage_Img" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cfg_Welfare_Customer" EntityType="Self.Cfg_Welfare_Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shopping_Area" EntityType="Self.Shopping_Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shopping_Cart" EntityType="Self.Shopping_Cart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shopping_Category" EntityType="Self.Shopping_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shopping_Customer_Address" EntityType="Self.Shopping_Customer_Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shopping_JD_Order_Log" EntityType="Self.Shopping_JD_Order_Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shopping_Order_Detail" EntityType="Self.Shopping_Order_Detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shopping_Order_Master" EntityType="Self.Shopping_Order_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shopping_Product_Info" EntityType="Self.Shopping_Product_Info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shopping_Token" EntityType="Self.Shopping_Token" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Welfare_Corporation" EntityType="Self.Welfare_Corporation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Welfare_Corporation_Point_Log" EntityType="Self.Welfare_Corporation_Point_Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Welfare_Customer" EntityType="Self.Welfare_Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Welfare_Customer_Login_Log" EntityType="Self.Welfare_Customer_Login_Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Welfare_Customer_Point_Log" EntityType="Self.Welfare_Customer_Point_Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Welfare_Customer_Token" EntityType="Self.Welfare_Customer_Token" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Welfare_Department" EntityType="Self.Welfare_Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Welfare_Enum" EntityType="Self.Welfare_Enum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Welfare_Mobile_Phone_Message" EntityType="Self.Welfare_Mobile_Phone_Message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Welfare_Notice" EntityType="Self.Welfare_Notice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Welfare_System_Bug_Log" EntityType="Self.Welfare_System_Bug_Log" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Employee_Welfare_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cfg_Corp_Category">
+          <Key>
+            <PropertyRef Name="corp_category_id" />
+          </Key>
+          <Property Name="corp_category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="catId" Type="Int32" Nullable="false" />
+          <Property Name="parentId" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="catClass" Type="Int32" Nullable="false" />
+          <Property Name="category_detail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="corp_id" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cfg_Corp_Phone_Message_Header">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="corp_id" Type="Int32" Nullable="false" />
+          <Property Name="message_header" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Cfg_Corp_Sale">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="corp_id" Type="Int32" Nullable="false" />
+          <Property Name="sale_value" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Shopping_Area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="area_id" Type="Int32" Nullable="false" />
+          <Property Name="area_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="area_level" Type="Int32" Nullable="false" />
+          <Property Name="parent_id" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shopping_Category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category_catId" Type="Int32" Nullable="false" />
+          <Property Name="parentId" Type="Int32" Nullable="false" />
+          <Property Name="category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="category_level" Type="Int32" Nullable="false" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Shopping_Customer_Address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="address_user_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address_fixed_telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="province_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="city_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="county_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="town_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="area_str_ids" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="customer_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="is_master" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shopping_Token">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="token_type_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="access_token" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="refresh_token" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="update_time_stamp" Type="Int64" Nullable="false" />
+          <Property Name="expires_in" Type="Int32" Nullable="false" />
+          <Property Name="refresh_token_expires" Type="Int64" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Welfare_Corporation">
+          <Key>
+            <PropertyRef Name="corp_id" />
+          </Key>
+          <Property Name="corp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="corp_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="corp_sname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="corp_people_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="corp_people_gender" Type="Int32" Nullable="false" />
+          <Property Name="corp_people_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="corp_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="corp_number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="logo_path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Welfare_Corporation_Point_Log">
+          <Key>
+            <PropertyRef Name="point_id" />
+          </Key>
+          <Property Name="point_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="corpid_id" Type="Int32" Nullable="false" />
+          <Property Name="source" Type="Int32" Nullable="false" />
+          <Property Name="refer_number" Type="Int32" Nullable="false" />
+          <Property Name="change_point" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="before_point" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="after_point" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="point_log_type" Type="Int32" Nullable="false" />
+          <Property Name="point_remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Welfare_Customer_Point_Log">
+          <Key>
+            <PropertyRef Name="point_id" />
+          </Key>
+          <Property Name="point_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="source" Type="Int32" Nullable="false" />
+          <Property Name="refer_number" Type="Int32" Nullable="false" />
+          <Property Name="change_point" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="before_point" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="after_point" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="point_log_type" Type="Int32" Nullable="false" />
+          <Property Name="point_remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Welfare_Customer_Token">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="access_token" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="token_time" Type="Int64" Nullable="false" />
+          <Property Name="expires_in" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="refresh_token_expires" Type="Int64" Nullable="false" />
+          <Property Name="corp_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Welfare_Department">
+          <Key>
+            <PropertyRef Name="dep_id" />
+          </Key>
+          <Property Name="dep_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dep_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="corp_id" Type="Int32" Nullable="false" />
+          <Property Name="parent_id" Type="Int32" Nullable="false" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Welfare_Mobile_Phone_Message">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phone_message" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="verification_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="expires_in" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ip_address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Employee_Welfare_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cfg_Corp_Category" EntityType="Self.Cfg_Corp_Category" />
+          <EntitySet Name="Cfg_Corp_Phone_Message_Header" EntityType="Self.Cfg_Corp_Phone_Message_Header" />
+          <EntitySet Name="Cfg_Corp_Sale" EntityType="Self.Cfg_Corp_Sale" />
+          <EntitySet Name="Shopping_Area" EntityType="Self.Shopping_Area" />
+          <EntitySet Name="Shopping_Category" EntityType="Self.Shopping_Category" />
+          <EntitySet Name="Shopping_Customer_Address" EntityType="Self.Shopping_Customer_Address" />
+          <EntitySet Name="Shopping_Token" EntityType="Self.Shopping_Token" />
+          <EntitySet Name="Welfare_Corporation" EntityType="Self.Welfare_Corporation" />
+          <EntitySet Name="Welfare_Corporation_Point_Log" EntityType="Self.Welfare_Corporation_Point_Log" />
+          <EntitySet Name="Welfare_Customer_Point_Log" EntityType="Self.Welfare_Customer_Point_Log" />
+          <EntitySet Name="Welfare_Customer_Token" EntityType="Self.Welfare_Customer_Token" />
+          <EntitySet Name="Welfare_Department" EntityType="Self.Welfare_Department" />
+          <EntitySet Name="Welfare_Mobile_Phone_Message" EntityType="Self.Welfare_Mobile_Phone_Message" />
+          <EntitySet Name="Welfare_System_Bug_Log" EntityType="Employee_Welfare_DBModel.Welfare_System_Bug_Log" />
+          <EntitySet Name="Shopping_JD_Order_Log" EntityType="Employee_Welfare_DBModel.Shopping_JD_Order_Log" />
+          <EntitySet Name="Shopping_Order_Detail" EntityType="Employee_Welfare_DBModel.Shopping_Order_Detail" />
+          <EntitySet Name="Shopping_Order_Master" EntityType="Employee_Welfare_DBModel.Shopping_Order_Master" />
+          <EntitySet Name="Cfg_Corp_ConfirmOrder" EntityType="Employee_Welfare_DBModel.Cfg_Corp_ConfirmOrder" />
+          <EntitySet Name="Cfg_Shopping_HomePage_Category" EntityType="Employee_Welfare_DBModel.Cfg_Shopping_HomePage_Category" />
+          <EntitySet Name="Cfg_Shopping_HomePage_Img" EntityType="Employee_Welfare_DBModel.Cfg_Shopping_HomePage_Img" />
+          <EntitySet Name="Shopping_Product_Info" EntityType="Employee_Welfare_DBModel.Shopping_Product_Info" />
+          <EntitySet Name="Cfg_Notice_Customer" EntityType="Employee_Welfare_DBModel.Cfg_Notice_Customer" />
+          <EntitySet Name="Welfare_Enum" EntityType="Employee_Welfare_DBModel.Welfare_Enum" />
+          <EntitySet Name="Welfare_Notice" EntityType="Employee_Welfare_DBModel.Welfare_Notice" />
+          <EntitySet Name="Cfg_Welfare_Customer" EntityType="Employee_Welfare_DBModel.Cfg_Welfare_Customer" />
+          <EntitySet Name="Welfare_Customer_Login_Log" EntityType="Employee_Welfare_DBModel.Welfare_Customer_Login_Log" />
+          <EntitySet Name="Welfare_Customer" EntityType="Employee_Welfare_DBModel.Welfare_Customer" />
+          <EntitySet Name="Shopping_Cart" EntityType="Employee_Welfare_DBModel.Shopping_Cart" />
+        </EntityContainer>
+        <EntityType Name="Welfare_System_Bug_Log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="source_sn" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="log_detail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="ex_message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Shopping_JD_Order_Log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jdOrderId" Type="Int64" Nullable="false" />
+          <Property Name="thirdOrder" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="orderPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="orderNakedPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="orderTaxPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="sku" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="freight" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="submitState" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shopping_Order_Detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_id" Type="Int32" Nullable="false" />
+          <Property Name="goods_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="skuId" Type="Int64" Nullable="false" />
+          <Property Name="num" Type="Int32" Nullable="false" />
+          <Property Name="goods_pt_price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="goods_jd_price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="tax" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="oid" Type="Int32" Nullable="false" />
+          <Property Name="goods_type" Type="Int32" Nullable="false" />
+          <Property Name="splitFreight" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="taxPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="nakedPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="jd_OrderId" Type="Int64" Nullable="false" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="img_path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cid_1" Type="Int32" Nullable="false" />
+          <Property Name="cid_2" Type="Int32" Nullable="false" />
+          <Property Name="cid_3" Type="Int32" Nullable="false" />
+          <Property Name="cid_1_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cid_2_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cid_3_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Shopping_Order_Master">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_sn" Type="Int64" Nullable="false" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="shopping_user_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="shopping_phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="province_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="city_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="county_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="town_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="user_address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="payment_method" Type="Int32" Nullable="false" />
+          <Property Name="order_pt_money" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="order_jd_money" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="freight" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="jd_order_state" Type="Int32" Nullable="false" />
+          <Property Name="is_pay" Type="Int32" Nullable="false" />
+          <Property Name="pay_time" Type="DateTime" Precision="3" />
+          <Property Name="orderNakedPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="orderTaxPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="is_order_split" Type="Int32" Nullable="false" />
+          <Property Name="logistics_state" Type="Int32" Nullable="false" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="corp_sale" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="thirdOrder" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cfg_Corp_ConfirmOrder">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="corpid" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cfg_Shopping_HomePage_Category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="corp_id" Type="Int32" Nullable="false" />
+          <Property Name="cat_id" Type="Int32" Nullable="false" />
+          <Property Name="cat_img" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cat_level" Type="Int32" Nullable="false" />
+          <Property Name="catids" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="cat_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="orderSort" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cfg_Shopping_HomePage_Img">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="corpid" Type="Int32" Nullable="false" />
+          <Property Name="device_type" Type="Int32" Nullable="false" />
+          <Property Name="carouse_img" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="orderSort" Type="Int32" Nullable="false" />
+          <Property Name="link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Shopping_Product_Info">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sku" Type="Int64" Nullable="false" />
+          <Property Name="product_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="product_price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="product_jdPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="product_imagePath" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="tax" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="taxPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="brandName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cid_1" Type="Int32" Nullable="false" />
+          <Property Name="cid_2" Type="Int32" Nullable="false" />
+          <Property Name="cid_3" Type="Int32" Nullable="false" />
+          <Property Name="is_sku_state" Type="Int32" Nullable="false" />
+          <Property Name="is_sale_check" Type="Int32" Nullable="false" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cfg_Notice_Customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="notice_id" Type="Int32" Nullable="false" />
+          <Property Name="is_read" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="ip_address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="device_type" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Welfare_Enum">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="welfare_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="welfare_tage" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="welfare_img" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="vue_route" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="route_request" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Welfare_Notice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="notice_type" Type="Int32" Nullable="false" />
+          <Property Name="notice_title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="notice_detail" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="start_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="end_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cfg_Welfare_Customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="welfare_id" Type="Int32" Nullable="false" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="is_timeout" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Welfare_Customer_Login_Log">
+          <Key>
+            <PropertyRef Name="login_id" />
+          </Key>
+          <Property Name="login_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="login_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="login_ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="login_type" Type="Int32" Nullable="false" />
+          <Property Name="device_type" Type="Int32" Nullable="false" />
+          <Property Name="is_loginok" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="corp_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Welfare_Customer">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="login_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="login_password" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="customer_state" Type="Int32" Nullable="false" />
+          <Property Name="corp_id" Type="Int32" Nullable="false" />
+          <Property Name="department_id" Type="Int32" Nullable="false" />
+          <Property Name="identity_card_type" Type="Int32" Nullable="false" />
+          <Property Name="identity_card_no" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="mobile_phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="customer_email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="Int32" Nullable="false" />
+          <Property Name="birthday" Type="DateTime" Precision="3" />
+          <Property Name="entry_time" Type="DateTime" Precision="3" />
+          <Property Name="user_money" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="user_point" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="is_test_customer" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="head_img" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Shopping_Cart">
+          <Key>
+            <PropertyRef Name="cart_id" />
+          </Key>
+          <Property Name="cart_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="product_id" Type="Int32" Nullable="false" />
+          <Property Name="skuid" Type="Int64" Nullable="false" />
+          <Property Name="product_num" Type="Int32" Nullable="false" />
+          <Property Name="product_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="product_img" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="product_jdprice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="product_ptprice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="is_delete" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sale_value" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="product_price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Employee_Welfare_DBModelStoreContainer" CdmEntityContainer="Employee_Welfare_DBEntities">
+          <EntitySetMapping Name="Cfg_Corp_Category">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Cfg_Corp_Category">
+              <MappingFragment StoreEntitySet="Cfg_Corp_Category">
+                <ScalarProperty Name="corp_category_id" ColumnName="corp_category_id" />
+                <ScalarProperty Name="catId" ColumnName="catId" />
+                <ScalarProperty Name="parentId" ColumnName="parentId" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="catClass" ColumnName="catClass" />
+                <ScalarProperty Name="category_detail" ColumnName="category_detail" />
+                <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cfg_Corp_Phone_Message_Header">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Cfg_Corp_Phone_Message_Header">
+              <MappingFragment StoreEntitySet="Cfg_Corp_Phone_Message_Header">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+                <ScalarProperty Name="message_header" ColumnName="message_header" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cfg_Corp_Sale">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Cfg_Corp_Sale">
+              <MappingFragment StoreEntitySet="Cfg_Corp_Sale">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+                <ScalarProperty Name="sale_value" ColumnName="sale_value" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shopping_Area">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Area">
+              <MappingFragment StoreEntitySet="Shopping_Area">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="area_id" ColumnName="area_id" />
+                <ScalarProperty Name="area_name" ColumnName="area_name" />
+                <ScalarProperty Name="area_level" ColumnName="area_level" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shopping_Category">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Category">
+              <MappingFragment StoreEntitySet="Shopping_Category">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="category_catId" ColumnName="category_catId" />
+                <ScalarProperty Name="parentId" ColumnName="parentId" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+                <ScalarProperty Name="category_level" ColumnName="category_level" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shopping_Customer_Address">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Customer_Address">
+              <MappingFragment StoreEntitySet="Shopping_Customer_Address">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="address_user_name" ColumnName="address_user_name" />
+                <ScalarProperty Name="address_email" ColumnName="address_email" />
+                <ScalarProperty Name="address_phone" ColumnName="address_phone" />
+                <ScalarProperty Name="address_fixed_telephone" ColumnName="address_fixed_telephone" />
+                <ScalarProperty Name="province_name" ColumnName="province_name" />
+                <ScalarProperty Name="city_name" ColumnName="city_name" />
+                <ScalarProperty Name="county_name" ColumnName="county_name" />
+                <ScalarProperty Name="town_name" ColumnName="town_name" />
+                <ScalarProperty Name="area_str_ids" ColumnName="area_str_ids" />
+                <ScalarProperty Name="customer_address" ColumnName="customer_address" />
+                <ScalarProperty Name="is_master" ColumnName="is_master" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shopping_Token">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Token">
+              <MappingFragment StoreEntitySet="Shopping_Token">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="token_type_name" ColumnName="token_type_name" />
+                <ScalarProperty Name="access_token" ColumnName="access_token" />
+                <ScalarProperty Name="refresh_token" ColumnName="refresh_token" />
+                <ScalarProperty Name="update_time_stamp" ColumnName="update_time_stamp" />
+                <ScalarProperty Name="expires_in" ColumnName="expires_in" />
+                <ScalarProperty Name="refresh_token_expires" ColumnName="refresh_token_expires" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Welfare_Corporation">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Corporation">
+              <MappingFragment StoreEntitySet="Welfare_Corporation">
+                <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+                <ScalarProperty Name="corp_name" ColumnName="corp_name" />
+                <ScalarProperty Name="corp_sname" ColumnName="corp_sname" />
+                <ScalarProperty Name="corp_people_name" ColumnName="corp_people_name" />
+                <ScalarProperty Name="corp_people_gender" ColumnName="corp_people_gender" />
+                <ScalarProperty Name="corp_people_phone" ColumnName="corp_people_phone" />
+                <ScalarProperty Name="corp_email" ColumnName="corp_email" />
+                <ScalarProperty Name="corp_number" ColumnName="corp_number" />
+                <ScalarProperty Name="logo_path" ColumnName="logo_path" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Welfare_Corporation_Point_Log">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Corporation_Point_Log">
+              <MappingFragment StoreEntitySet="Welfare_Corporation_Point_Log">
+                <ScalarProperty Name="point_id" ColumnName="point_id" />
+                <ScalarProperty Name="corpid_id" ColumnName="corpid_id" />
+                <ScalarProperty Name="source" ColumnName="source" />
+                <ScalarProperty Name="refer_number" ColumnName="refer_number" />
+                <ScalarProperty Name="change_point" ColumnName="change_point" />
+                <ScalarProperty Name="before_point" ColumnName="before_point" />
+                <ScalarProperty Name="after_point" ColumnName="after_point" />
+                <ScalarProperty Name="point_log_type" ColumnName="point_log_type" />
+                <ScalarProperty Name="point_remark" ColumnName="point_remark" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Welfare_Customer_Point_Log">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Customer_Point_Log">
+              <MappingFragment StoreEntitySet="Welfare_Customer_Point_Log">
+                <ScalarProperty Name="point_id" ColumnName="point_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="source" ColumnName="source" />
+                <ScalarProperty Name="refer_number" ColumnName="refer_number" />
+                <ScalarProperty Name="change_point" ColumnName="change_point" />
+                <ScalarProperty Name="before_point" ColumnName="before_point" />
+                <ScalarProperty Name="after_point" ColumnName="after_point" />
+                <ScalarProperty Name="point_log_type" ColumnName="point_log_type" />
+                <ScalarProperty Name="point_remark" ColumnName="point_remark" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Welfare_Customer_Token">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Customer_Token">
+              <MappingFragment StoreEntitySet="Welfare_Customer_Token">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="access_token" ColumnName="access_token" />
+                <ScalarProperty Name="token_time" ColumnName="token_time" />
+                <ScalarProperty Name="expires_in" ColumnName="expires_in" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="refresh_token_expires" ColumnName="refresh_token_expires" />
+                <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Welfare_Department">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Department">
+              <MappingFragment StoreEntitySet="Welfare_Department">
+                <ScalarProperty Name="dep_id" ColumnName="dep_id" />
+                <ScalarProperty Name="dep_name" ColumnName="dep_name" />
+                <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Welfare_Mobile_Phone_Message">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Mobile_Phone_Message">
+              <MappingFragment StoreEntitySet="Welfare_Mobile_Phone_Message">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="phone_message" ColumnName="phone_message" />
+                <ScalarProperty Name="verification_code" ColumnName="verification_code" />
+                <ScalarProperty Name="expires_in" ColumnName="expires_in" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Welfare_System_Bug_Log">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_System_Bug_Log">
+              <MappingFragment StoreEntitySet="Welfare_System_Bug_Log">
+                <ScalarProperty Name="ex_message" ColumnName="ex_message" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="log_detail" ColumnName="log_detail" />
+                <ScalarProperty Name="source_sn" ColumnName="source_sn" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shopping_JD_Order_Log">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_JD_Order_Log">
+              <MappingFragment StoreEntitySet="Shopping_JD_Order_Log">
+                <ScalarProperty Name="submitState" ColumnName="submitState" />
+                <ScalarProperty Name="freight" ColumnName="freight" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="sku" ColumnName="sku" />
+                <ScalarProperty Name="orderTaxPrice" ColumnName="orderTaxPrice" />
+                <ScalarProperty Name="orderNakedPrice" ColumnName="orderNakedPrice" />
+                <ScalarProperty Name="orderPrice" ColumnName="orderPrice" />
+                <ScalarProperty Name="thirdOrder" ColumnName="thirdOrder" />
+                <ScalarProperty Name="jdOrderId" ColumnName="jdOrderId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shopping_Order_Detail">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Order_Detail">
+              <MappingFragment StoreEntitySet="Shopping_Order_Detail">
+                <ScalarProperty Name="cid_3_name" ColumnName="cid_3_name" />
+                <ScalarProperty Name="cid_2_name" ColumnName="cid_2_name" />
+                <ScalarProperty Name="cid_1_name" ColumnName="cid_1_name" />
+                <ScalarProperty Name="cid_3" ColumnName="cid_3" />
+                <ScalarProperty Name="cid_2" ColumnName="cid_2" />
+                <ScalarProperty Name="cid_1" ColumnName="cid_1" />
+                <ScalarProperty Name="img_path" ColumnName="img_path" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="jd_OrderId" ColumnName="jd_OrderId" />
+                <ScalarProperty Name="nakedPrice" ColumnName="nakedPrice" />
+                <ScalarProperty Name="taxPrice" ColumnName="taxPrice" />
+                <ScalarProperty Name="splitFreight" ColumnName="splitFreight" />
+                <ScalarProperty Name="goods_type" ColumnName="goods_type" />
+                <ScalarProperty Name="oid" ColumnName="oid" />
+                <ScalarProperty Name="tax" ColumnName="tax" />
+                <ScalarProperty Name="goods_jd_price" ColumnName="goods_jd_price" />
+                <ScalarProperty Name="goods_pt_price" ColumnName="goods_pt_price" />
+                <ScalarProperty Name="num" ColumnName="num" />
+                <ScalarProperty Name="skuId" ColumnName="skuId" />
+                <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shopping_Order_Master">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Order_Master">
+              <MappingFragment StoreEntitySet="Shopping_Order_Master">
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="thirdOrder" ColumnName="thirdOrder" />
+                <ScalarProperty Name="corp_sale" ColumnName="corp_sale" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="logistics_state" ColumnName="logistics_state" />
+                <ScalarProperty Name="is_order_split" ColumnName="is_order_split" />
+                <ScalarProperty Name="orderTaxPrice" ColumnName="orderTaxPrice" />
+                <ScalarProperty Name="orderNakedPrice" ColumnName="orderNakedPrice" />
+                <ScalarProperty Name="pay_time" ColumnName="pay_time" />
+                <ScalarProperty Name="is_pay" ColumnName="is_pay" />
+                <ScalarProperty Name="jd_order_state" ColumnName="jd_order_state" />
+                <ScalarProperty Name="freight" ColumnName="freight" />
+                <ScalarProperty Name="order_jd_money" ColumnName="order_jd_money" />
+                <ScalarProperty Name="order_pt_money" ColumnName="order_pt_money" />
+                <ScalarProperty Name="payment_method" ColumnName="payment_method" />
+                <ScalarProperty Name="user_address" ColumnName="user_address" />
+                <ScalarProperty Name="town_name" ColumnName="town_name" />
+                <ScalarProperty Name="county_name" ColumnName="county_name" />
+                <ScalarProperty Name="city_name" ColumnName="city_name" />
+                <ScalarProperty Name="province_name" ColumnName="province_name" />
+                <ScalarProperty Name="shopping_phone" ColumnName="shopping_phone" />
+                <ScalarProperty Name="shopping_user_name" ColumnName="shopping_user_name" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="order_sn" ColumnName="order_sn" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cfg_Corp_ConfirmOrder">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Cfg_Corp_ConfirmOrder">
+              <MappingFragment StoreEntitySet="Cfg_Corp_ConfirmOrder">
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="corpid" ColumnName="corpid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cfg_Shopping_HomePage_Category">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Cfg_Shopping_HomePage_Category">
+              <MappingFragment StoreEntitySet="Cfg_Shopping_HomePage_Category">
+                <ScalarProperty Name="orderSort" ColumnName="orderSort" />
+                <ScalarProperty Name="cat_name" ColumnName="cat_name" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="catids" ColumnName="catids" />
+                <ScalarProperty Name="cat_level" ColumnName="cat_level" />
+                <ScalarProperty Name="cat_img" ColumnName="cat_img" />
+                <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+                <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cfg_Shopping_HomePage_Img">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Cfg_Shopping_HomePage_Img">
+              <MappingFragment StoreEntitySet="Cfg_Shopping_HomePage_Img">
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="orderSort" ColumnName="orderSort" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="carouse_img" ColumnName="carouse_img" />
+                <ScalarProperty Name="device_type" ColumnName="device_type" />
+                <ScalarProperty Name="corpid" ColumnName="corpid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shopping_Product_Info">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Product_Info">
+              <MappingFragment StoreEntitySet="Shopping_Product_Info">
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="is_sale_check" ColumnName="is_sale_check" />
+                <ScalarProperty Name="is_sku_state" ColumnName="is_sku_state" />
+                <ScalarProperty Name="cid_3" ColumnName="cid_3" />
+                <ScalarProperty Name="cid_2" ColumnName="cid_2" />
+                <ScalarProperty Name="cid_1" ColumnName="cid_1" />
+                <ScalarProperty Name="brandName" ColumnName="brandName" />
+                <ScalarProperty Name="taxPrice" ColumnName="taxPrice" />
+                <ScalarProperty Name="tax" ColumnName="tax" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="product_imagePath" ColumnName="product_imagePath" />
+                <ScalarProperty Name="product_jdPrice" ColumnName="product_jdPrice" />
+                <ScalarProperty Name="product_price" ColumnName="product_price" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="sku" ColumnName="sku" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cfg_Notice_Customer">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Cfg_Notice_Customer">
+              <MappingFragment StoreEntitySet="Cfg_Notice_Customer">
+                <ScalarProperty Name="device_type" ColumnName="device_type" />
+                <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="is_read" ColumnName="is_read" />
+                <ScalarProperty Name="notice_id" ColumnName="notice_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Welfare_Enum">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Enum">
+              <MappingFragment StoreEntitySet="Welfare_Enum">
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="route_request" ColumnName="route_request" />
+                <ScalarProperty Name="vue_route" ColumnName="vue_route" />
+                <ScalarProperty Name="welfare_img" ColumnName="welfare_img" />
+                <ScalarProperty Name="welfare_tage" ColumnName="welfare_tage" />
+                <ScalarProperty Name="welfare_name" ColumnName="welfare_name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Welfare_Notice">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Notice">
+              <MappingFragment StoreEntitySet="Welfare_Notice">
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="end_time" ColumnName="end_time" />
+                <ScalarProperty Name="start_time" ColumnName="start_time" />
+                <ScalarProperty Name="notice_detail" ColumnName="notice_detail" />
+                <ScalarProperty Name="notice_title" ColumnName="notice_title" />
+                <ScalarProperty Name="notice_type" ColumnName="notice_type" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cfg_Welfare_Customer">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Cfg_Welfare_Customer">
+              <MappingFragment StoreEntitySet="Cfg_Welfare_Customer">
+                <ScalarProperty Name="is_timeout" ColumnName="is_timeout" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="welfare_id" ColumnName="welfare_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Welfare_Customer_Login_Log">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Customer_Login_Log">
+              <MappingFragment StoreEntitySet="Welfare_Customer_Login_Log">
+                <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="is_loginok" ColumnName="is_loginok" />
+                <ScalarProperty Name="device_type" ColumnName="device_type" />
+                <ScalarProperty Name="login_type" ColumnName="login_type" />
+                <ScalarProperty Name="login_ip" ColumnName="login_ip" />
+                <ScalarProperty Name="login_time" ColumnName="login_time" />
+                <ScalarProperty Name="login_name" ColumnName="login_name" />
+                <ScalarProperty Name="login_id" ColumnName="login_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Welfare_Customer">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Welfare_Customer">
+              <MappingFragment StoreEntitySet="Welfare_Customer">
+                <ScalarProperty Name="head_img" ColumnName="head_img" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="is_test_customer" ColumnName="is_test_customer" />
+                <ScalarProperty Name="user_point" ColumnName="user_point" />
+                <ScalarProperty Name="user_money" ColumnName="user_money" />
+                <ScalarProperty Name="entry_time" ColumnName="entry_time" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="customer_email" ColumnName="customer_email" />
+                <ScalarProperty Name="mobile_phone" ColumnName="mobile_phone" />
+                <ScalarProperty Name="identity_card_no" ColumnName="identity_card_no" />
+                <ScalarProperty Name="identity_card_type" ColumnName="identity_card_type" />
+                <ScalarProperty Name="department_id" ColumnName="department_id" />
+                <ScalarProperty Name="corp_id" ColumnName="corp_id" />
+                <ScalarProperty Name="customer_state" ColumnName="customer_state" />
+                <ScalarProperty Name="login_password" ColumnName="login_password" />
+                <ScalarProperty Name="login_name" ColumnName="login_name" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shopping_Cart">
+            <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Cart">
+              <MappingFragment StoreEntitySet="Shopping_Cart">
+                <ScalarProperty Name="product_price" ColumnName="product_price" />
+                <ScalarProperty Name="sale_value" ColumnName="sale_value" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+                <ScalarProperty Name="product_ptprice" ColumnName="product_ptprice" />
+                <ScalarProperty Name="product_jdprice" ColumnName="product_jdprice" />
+                <ScalarProperty Name="product_img" ColumnName="product_img" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="product_num" ColumnName="product_num" />
+                <ScalarProperty Name="skuid" ColumnName="skuid" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
