@@ -267,6 +267,5 @@ namespace Welfare.Models.JDRequest
 
         public int addressId { get; set; }
         public List<parameterSkuNums> skus { get; set; }
-        public decimal payMoney { get; set; }
     }
 }

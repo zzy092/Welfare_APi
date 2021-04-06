@@ -1,0 +1,147 @@
+﻿2021-04-06 11:25:26:[获取订单运费]!ex:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 Welfare.Controllers.OrderJdController.getOrderFreight(paramOrderFreight queryOrderFreight) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 597
+StackTrace:   在 Welfare.Controllers.OrderJdController.getOrderFreight(paramOrderFreight queryOrderFreight) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 597
+2021-04-06 15:47:31:[获取订单运费]!ex:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 Welfare.Controllers.OrderJdController.getOrderFreight(paramOrderFreight queryOrderFreight) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 597
+StackTrace:   在 Welfare.Controllers.OrderJdController.getOrderFreight(paramOrderFreight queryOrderFreight) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 597
+2021-04-06 17:05:18:[获取订单运费]!ex:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 Welfare.Controllers.OrderJdController.getOrderFreight(paramOrderFreight queryOrderFreight) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 597
+StackTrace:   在 Welfare.Controllers.OrderJdController.getOrderFreight(paramOrderFreight queryOrderFreight) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 597
+2021-04-06 17:09:21:[获取订单运费]!ex:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 Welfare.Controllers.OrderJdController.getOrderFreight(paramOrderFreight queryOrderFreight) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 597
+StackTrace:   在 Welfare.Controllers.OrderJdController.getOrderFreight(paramOrderFreight queryOrderFreight) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 597
+2021-04-06 19:16:34:[用户登陆]!ex:System.Runtime.Serialization.SerializationException: 反序列化对象 属于类型 WelfareApi.Models.Login.paramLogin 时出现错误。不能将值“undefined”作为类型“Int32”来分析。 ---> System.Xml.XmlException: 不能将值“undefined”作为类型“Int32”来分析。 ---> System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ParseInt(String value, NumberStyles style)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ParseInt(String value, NumberStyles style)
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ReadContentAsInt()
+   在 System.Xml.XmlDictionaryReader.ReadElementContentAsInt()
+   在 System.Runtime.Serialization.XmlReaderDelegator.ReadElementContentAsInt()
+   在 ReadparamLoginFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString[] )
+   在 System.Runtime.Serialization.Json.JsonClassDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Type declaredType, DataContract dataContract, String name, String ns)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)
+   在 System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\LoginController.cs:行号 50
+StackTrace:   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\LoginController.cs:行号 50
+2021-04-06 19:16:43:[用户登陆]!ex:System.Runtime.Serialization.SerializationException: 反序列化对象 属于类型 WelfareApi.Models.Login.paramLogin 时出现错误。不能将值“undefined”作为类型“Int32”来分析。 ---> System.Xml.XmlException: 不能将值“undefined”作为类型“Int32”来分析。 ---> System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ParseInt(String value, NumberStyles style)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ParseInt(String value, NumberStyles style)
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ReadContentAsInt()
+   在 System.Xml.XmlDictionaryReader.ReadElementContentAsInt()
+   在 System.Runtime.Serialization.XmlReaderDelegator.ReadElementContentAsInt()
+   在 ReadparamLoginFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString[] )
+   在 System.Runtime.Serialization.Json.JsonClassDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Type declaredType, DataContract dataContract, String name, String ns)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)
+   在 System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\LoginController.cs:行号 50
+StackTrace:   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\LoginController.cs:行号 50
+2021-04-06 19:18:20:[用户登陆]!ex:System.Runtime.Serialization.SerializationException: 反序列化对象 属于类型 WelfareApi.Models.Login.paramLogin 时出现错误。不能将值“undefined”作为类型“Int32”来分析。 ---> System.Xml.XmlException: 不能将值“undefined”作为类型“Int32”来分析。 ---> System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ParseInt(String value, NumberStyles style)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ParseInt(String value, NumberStyles style)
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ReadContentAsInt()
+   在 System.Xml.XmlDictionaryReader.ReadElementContentAsInt()
+   在 System.Runtime.Serialization.XmlReaderDelegator.ReadElementContentAsInt()
+   在 ReadparamLoginFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString[] )
+   在 System.Runtime.Serialization.Json.JsonClassDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Type declaredType, DataContract dataContract, String name, String ns)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)
+   在 System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\LoginController.cs:行号 50
+StackTrace:   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\LoginController.cs:行号 50
+2021-04-06 19:18:47:[用户登陆]!ex:System.Runtime.Serialization.SerializationException: 反序列化对象 属于类型 WelfareApi.Models.Login.paramLogin 时出现错误。不能将值“undefined”作为类型“Int32”来分析。 ---> System.Xml.XmlException: 不能将值“undefined”作为类型“Int32”来分析。 ---> System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ParseInt(String value, NumberStyles style)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ParseInt(String value, NumberStyles style)
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ReadContentAsInt()
+   在 System.Xml.XmlDictionaryReader.ReadElementContentAsInt()
+   在 System.Runtime.Serialization.XmlReaderDelegator.ReadElementContentAsInt()
+   在 ReadparamLoginFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString[] )
+   在 System.Runtime.Serialization.Json.JsonClassDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Type declaredType, DataContract dataContract, String name, String ns)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)
+   在 System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\LoginController.cs:行号 50
+StackTrace:   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\LoginController.cs:行号 50
+2021-04-06 19:19:55:[用户登陆]!ex:System.Runtime.Serialization.SerializationException: 反序列化对象 属于类型 WelfareApi.Models.Login.paramLogin 时出现错误。不能将值“undefined”作为类型“Int32”来分析。 ---> System.Xml.XmlException: 不能将值“undefined”作为类型“Int32”来分析。 ---> System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ParseInt(String value, NumberStyles style)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ParseInt(String value, NumberStyles style)
+   在 System.Runtime.Serialization.Json.XmlJsonReader.ReadContentAsInt()
+   在 System.Xml.XmlDictionaryReader.ReadElementContentAsInt()
+   在 System.Runtime.Serialization.XmlReaderDelegator.ReadElementContentAsInt()
+   在 ReadparamLoginFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString[] )
+   在 System.Runtime.Serialization.Json.JsonClassDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   在 System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)
+   在 System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Type declaredType, DataContract dataContract, String name, String ns)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)
+   在 System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\LoginController.cs:行号 50
+StackTrace:   在 System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)
+   在 System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\LoginController.cs:行号 50

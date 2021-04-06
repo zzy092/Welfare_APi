@@ -162,16 +162,6 @@ namespace Welfare.Controllers
                     }
                     sysPayMoney += subOrderModel.result.freight;
 
-                    if (sysPayMoney != paramModel.payMoney)
-                    {
-                        return Json(new Result()
-                        {
-                            success = false,
-                            resultCode = "1003",
-                            resultMessage = "订单价格异常"
-                        });
-                    }
-
                     bool isSubmitOk = true;
                     Shopping_Order_Master masterOrder = new Shopping_Order_Master()
                     {
@@ -595,12 +585,7 @@ namespace Welfare.Controllers
                 var arrArea = queryOrderFreight.defAddress.Split('_');
                 var sku = JsonConvert.SerializeObject(queryOrderFreight.skuUums);
                 var model = jdCommon.getOrderFreight(sku,arrArea[0], arrArea[1], arrArea[2], arrArea[3],4);
-                return Json(new Result()
-                {
-                    success = true,
-                    resultCode = "0000",
-                    result=model
-                });
+                return Json(model);
             }
             catch (Exception ex)
             {
@@ -810,7 +795,6 @@ namespace Welfare.Controllers
             bool isOk = true;
             if (model.result.Count > 0)
             {
-
                 var arrSku = skuids.Split(',');
                 foreach (var item in arrSku)
                 {

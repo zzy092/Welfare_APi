@@ -422,7 +422,7 @@ namespace Welfare.Models.JDResponsSerialize
     #endregion
 
     #region 库存
-    public class resultStock:JDResult
+    public class resultStock : JDResult
     {
         public List<stock> result { get; set; }
     }
@@ -474,14 +474,14 @@ namespace Welfare.Models.JDResponsSerialize
         public string AddressMessage { get; set; }
         public bool isStock { get; set; }
         public string stockMsg { get; set; }
-       
+
     }
 
     public class goodsDetail
     {
         //商品名称
         public string name { get; set; }
-        
+
         //平台销售价
         public decimal ptPrice { get; set; }
         //平台销售利率sale
@@ -627,14 +627,18 @@ namespace Welfare.Models.JDResponsSerialize
 
     #region 确认预占库存订单
 
-    public class resultConfirmOrder:JDResult
+    public class resultConfirmOrder : JDResult
     {
         public bool result { get; set; }
     }
     #endregion
 
     #region 订单运费查询
-    public class resultFreight: JDResult
+    public class resultFreight : JDResult
+    {
+        public _freight result { get; set; }
+    }
+    public class _freight
     {
         public int freight { get; set; }
         public int baseFreight { get; set; }
