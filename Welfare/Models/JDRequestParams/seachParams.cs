@@ -264,7 +264,6 @@ namespace Welfare.Models.JDRequest
 
     public class pamarSubitOrder
     {
-        public string token { get; set; }
 
         public int addressId { get; set; }
         public List<parameterSkuNums> skus { get; set; }

@@ -23,7 +23,7 @@ namespace Welfare.Common
         {
             BaseBLL<Cfg_Corp_Sale> bllCorpSale = new BaseBLL<Cfg_Corp_Sale>();
             return bllCorpSale.GetSingle(a => a.is_delete == 0 && a.corp_id == corpid).sale_value;
-        } 
+        }
         #endregion
 
         #region 用户
@@ -181,7 +181,7 @@ namespace Welfare.Common
             return model;
         }
 
-        
+
 
         /// <summary>
         /// 返回sku商品名
@@ -373,6 +373,35 @@ namespace Welfare.Common
         {
             BaseBLL<Shopping_Category> bllCategory = new BaseBLL<Shopping_Category>();
             var model = bllCategory.GetSingle(a => a.is_delete == 0 && a.category_catId == cid);
+            return model;
+        }
+        #endregion
+
+        #region 订单
+        /// <summary>
+        /// 查询订单运费
+        /// </summary>
+        /// <param name="sku"></param>
+        /// <param name="province"></param>
+        /// <param name="city"></param>
+        /// <param name="county"></param>
+        /// <param name="town"></param>
+        /// <param name="paymentType"></param>
+        /// <returns></returns>
+        public static resultFreight getOrderFreight(string sku, string province, string city, string county, string town, int paymentType)
+        {
+            Dictionary<string, string> myPrivateDir = new Dictionary<string, string>();
+            myPrivateDir.Add("token", getShoppingToken());
+            myPrivateDir.Add("sku", sku);
+            myPrivateDir.Add("province", province.ToString());
+            myPrivateDir.Add("city", city.ToString());
+            myPrivateDir.Add("county", county.ToString());
+            myPrivateDir.Add("town", town.ToString());
+            myPrivateDir.Add("paymentType", paymentType.ToString());
+
+            var jdStr = jdApi.requesUrl(myPrivateDir, jdApi.urlOrderFreight);
+            var model = JsonConvert.DeserializeObject<resultFreight>(jdStr);
+
             return model;
         }
         #endregion

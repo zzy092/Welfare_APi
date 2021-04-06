@@ -30,5 +30,6 @@ namespace Model
         public System.DateTime create_time { get; set; }
         public System.DateTime modified_time { get; set; }
         public int is_delete { get; set; }
+        public string tage_name { get; set; }
     }
 }

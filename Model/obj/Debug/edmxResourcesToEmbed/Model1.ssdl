@@ -168,6 +168,7 @@
     <Property Name="create_time" Type="datetime" Nullable="false" />
     <Property Name="modified_time" Type="datetime" Nullable="false" />
     <Property Name="is_delete" Type="int" Nullable="false" />
+    <Property Name="tage_name" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="Shopping_JD_Order_Log">
     <Key>

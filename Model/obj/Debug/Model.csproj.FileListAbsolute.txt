@@ -36,3 +36,16 @@ D:\code\Welfare_New_System\WelfareApi\Model\obj\Debug\Model.csproj.CoreCompileIn
 D:\code\Welfare_New_System\WelfareApi\Model\obj\Debug\Model.csproj.CopyComplete
 D:\code\Welfare_New_System\WelfareApi\Model\obj\Debug\Model.dll
 D:\code\Welfare_New_System\WelfareApi\Model\obj\Debug\Model.pdb
+D:\code\Welfare_New_System\Welfare_APi\Model\bin\Debug\Model.dll.config
+D:\code\Welfare_New_System\Welfare_APi\Model\bin\Debug\Model.dll
+D:\code\Welfare_New_System\Welfare_APi\Model\bin\Debug\Model.pdb
+D:\code\Welfare_New_System\Welfare_APi\Model\bin\Debug\EntityFramework.dll
+D:\code\Welfare_New_System\Welfare_APi\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\code\Welfare_New_System\Welfare_APi\Model\bin\Debug\EntityFramework.xml
+D:\code\Welfare_New_System\Welfare_APi\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\code\Welfare_New_System\Welfare_APi\Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\code\Welfare_New_System\Welfare_APi\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\code\Welfare_New_System\Welfare_APi\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\code\Welfare_New_System\Welfare_APi\Model\obj\Debug\Model.csproj.CopyComplete
+D:\code\Welfare_New_System\Welfare_APi\Model\obj\Debug\Model.dll
+D:\code\Welfare_New_System\Welfare_APi\Model\obj\Debug\Model.pdb

@@ -142,98 +142,118 @@ namespace Welfare.Controllers
                 });
             }
         }
-        ///// <summary>
-        ///// 帐号登陆
-        ///// </summary>
-        ///// <param name="pLogin"></param>
-        ///// <returns></returns>
-        //[HttpPost]
-        //public IHttpActionResult accountLogin_old([FromBody] paramLogin pLogin)
-        //{
-        //    try
-        //    {
-        //        if (string.IsNullOrEmpty(pLogin.loginName) && string.IsNullOrEmpty(pLogin.password))
-        //        {
-        //            return Json(new Result()
-        //            {
-        //                success = false,
-        //                resultCode = "1003",
-        //                resultMessage = "请求参数有误",
-        //            });
-        //        }
 
-        //        BaseBLL<Welfare_Customer> bllCustomer = new BaseBLL<Welfare_Customer>();
-        //        var listCustomer = bllCustomer.GetList(a => a.is_delete == 0 && a.login_name == pLogin.loginName).ToList();
-        //        if (listCustomer.Count == 0)
-        //        {
-        //            return Json(new Result
-        //            {
-        //                success = false,
-        //                resultCode = "1003",
-        //                resultMessage = "帐号不存在"
-        //            });
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public IHttpActionResult accountDefault()
+        {
+            BaseBLL<Welfare_Customer> bllCustomer = new BaseBLL<Welfare_Customer>();
+            var model = bllCustomer.GetSingle(a => a.customer_id > 0);
+            var objToken = getUserToken(model);
+            return Json(new Result
+            {
+                success = true,
+                resultCode = "0000",
+                resultMessage = "",
+                result = objToken
+            });
+        }
 
-        //        }
+        /// <summary>
+        /// 帐号登陆
+        /// </summary>
+        /// <param name="pLogin"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public IHttpActionResult accountLogin_old([FromBody] paramLogin pLogin)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(pLogin.loginName) && string.IsNullOrEmpty(pLogin.password))
+                {
+                    return Json(new Result()
+                    {
+                        success = false,
+                        resultCode = "1003",
+                        resultMessage = "请求参数有误",
+                    });
+                }
 
-        //        var  listCustomerPwd = listCustomer.Where(a => a.login_password == pLogin.password).ToList();
-        //        if (listCustomerPwd.Count==0)
-        //        {
-        //            addLoginLog(listCustomer[0].customer_id, pLogin.deviceType, 2, 0);
-        //            return Json(new Result
-        //            {
-        //                success = false,
-        //                resultCode = "1003",
-        //                resultMessage = "密码错误"
-        //            });
-        //        }
+                BaseBLL<Welfare_Customer> bllCustomer = new BaseBLL<Welfare_Customer>();
+                var listCustomer = bllCustomer.GetList(a => a.is_delete == 0 && a.login_name == pLogin.loginName).ToList();
+                if (listCustomer.Count == 0)
+                {
+                    return Json(new Result
+                    {
+                        success = false,
+                        resultCode = "1003",
+                        resultMessage = "帐号不存在"
+                    });
 
-        //        var  listCustomerCorp = listCustomerPwd.Where(a => a.corp_id== pLogin.corpid).ToList();
-        //        if (listCustomerCorp.Count == 0)
-        //        {
-        //            addLoginLog(listCustomerPwd[0].customer_id, pLogin.deviceType, 2, 0);
-        //            return Json(new Result
-        //            {
-        //                success = false,
-        //                resultCode = "1003",
-        //                resultMessage = "登陆地址错误"
-        //            });
-        //        }
+                }
 
-        //        var  listCustomerState = listCustomerCorp.Where(a => a.customer_state==0).ToList();
-        //        if (listCustomerState.Count==0)
-        //        {
-        //            addLoginLog(listCustomerCorp[0].customer_id, pLogin.deviceType, 2, 0);
-        //            return Json(new Result
-        //            {
-        //                success = false,
-        //                resultCode = "1003",
-        //                resultMessage = "帐号已停用"
-        //            });
-        //        }
-        //        var customerModel = listCustomerState.FirstOrDefault();
-        //        var objToken = getUserToken(customerModel);
-        //        addLoginLog(customerModel.customer_id, pLogin.deviceType, 2);
+                var listCustomerPwd = listCustomer.Where(a => a.login_password == pLogin.password).ToList();
+                if (listCustomerPwd.Count == 0)
+                {
+                    addLoginLog("", pLogin.corpid, 1, 0);
+                    return Json(new Result
+                    {
+                        success = false,
+                        resultCode = "1003",
+                        resultMessage = "密码错误"
+                    });
+                }
 
-        //        return Json(new Result
-        //        {
-        //            success = true,
-        //            resultCode = "0000",
-        //            resultMessage = "",
-        //            result = objToken
-        //        });
+                var listCustomerCorp = listCustomerPwd.Where(a => a.corp_id == pLogin.corpid).ToList();
+                if (listCustomerCorp.Count == 0)
+                {
+                    addLoginLog("", pLogin.corpid, 1, 0);
+                    return Json(new Result
+                    {
+                        success = false,
+                        resultCode = "1003",
+                        resultMessage = "登陆地址错误"
+                    });
+                }
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        LogHelper.LogWriteBug("[用户登陆]!", "ex:" + ex + "\r\nStackTrace:" + ex.StackTrace, "1");
-        //        return Json(new Result()
-        //        {
-        //            success = false,
-        //            resultCode = "5001",
-        //            resultMessage = "服务异常，请稍后重试",
-        //        });
-        //    }
-        //}
+                var listCustomerState = listCustomerCorp.Where(a => a.customer_state == 0).ToList();
+                if (listCustomerState.Count == 0)
+                {
+                    addLoginLog("", pLogin.corpid, 1, 0);
+                    return Json(new Result
+                    {
+                        success = false,
+                        resultCode = "1003",
+                        resultMessage = "帐号已停用"
+                    });
+                }
+                var customerModel = listCustomerState.FirstOrDefault();
+                var objToken = getUserToken(customerModel);
+                addLoginLog("", pLogin.corpid, 1, 0);
+
+                return Json(new Result
+                {
+                    success = true,
+                    resultCode = "0000",
+                    resultMessage = "",
+                    result = objToken
+                });
+
+            }
+            catch (Exception ex)
+            {
+                LogHelper.LogWriteBug("[用户登陆]!", "ex:" + ex + "\r\nStackTrace:" + ex.StackTrace, "1");
+                return Json(new Result()
+                {
+                    success = false,
+                    resultCode = "5001",
+                    resultMessage = "服务异常，请稍后重试",
+                });
+            }
+        }
 
         /// <summary>
         /// 短信登陆

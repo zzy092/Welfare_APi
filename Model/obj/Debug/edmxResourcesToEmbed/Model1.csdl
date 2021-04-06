@@ -63,27 +63,6 @@
     <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
-  <EntityType Name="Shopping_Customer_Address">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="customer_id" Type="Int32" Nullable="false" />
-    <Property Name="address_user_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="address_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="address_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="address_fixed_telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="province_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="city_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="county_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="town_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="area_str_ids" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="customer_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="is_master" Type="Int32" Nullable="false" />
-    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="is_delete" Type="Int32" Nullable="false" />
-  </EntityType>
   <EntityType Name="Shopping_Token">
     <Key>
       <PropertyRef Name="id" />
@@ -197,7 +176,6 @@
     <EntitySet Name="Cfg_Corp_Sale" EntityType="Self.Cfg_Corp_Sale" />
     <EntitySet Name="Shopping_Area" EntityType="Self.Shopping_Area" />
     <EntitySet Name="Shopping_Category" EntityType="Self.Shopping_Category" />
-    <EntitySet Name="Shopping_Customer_Address" EntityType="Self.Shopping_Customer_Address" />
     <EntitySet Name="Shopping_Token" EntityType="Self.Shopping_Token" />
     <EntitySet Name="Welfare_Corporation" EntityType="Self.Welfare_Corporation" />
     <EntitySet Name="Welfare_Corporation_Point_Log" EntityType="Self.Welfare_Corporation_Point_Log" />
@@ -220,6 +198,7 @@
     <EntitySet Name="Welfare_Customer_Login_Log" EntityType="Employee_Welfare_DBModel.Welfare_Customer_Login_Log" />
     <EntitySet Name="Welfare_Customer" EntityType="Employee_Welfare_DBModel.Welfare_Customer" />
     <EntitySet Name="Shopping_Cart" EntityType="Employee_Welfare_DBModel.Shopping_Cart" />
+    <EntitySet Name="Shopping_Customer_Address" EntityType="Employee_Welfare_DBModel.Shopping_Customer_Address" />
   </EntityContainer>
   <EntityType Name="Welfare_System_Bug_Log">
     <Key>
@@ -489,5 +468,27 @@
     <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="sale_value" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="product_price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Shopping_Customer_Address">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customer_id" Type="Int32" Nullable="false" />
+    <Property Name="address_user_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="address_email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address_phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="address_fixed_telephone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="province_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="city_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="county_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="town_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="area_str_ids" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="customer_address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="is_master" Type="Int32" Nullable="false" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modified_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="is_delete" Type="Int32" Nullable="false" />
+    <Property Name="tage_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

@@ -69,28 +69,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Shopping_Customer_Address">
-      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Customer_Address">
-        <MappingFragment StoreEntitySet="Shopping_Customer_Address">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
-          <ScalarProperty Name="address_user_name" ColumnName="address_user_name" />
-          <ScalarProperty Name="address_email" ColumnName="address_email" />
-          <ScalarProperty Name="address_phone" ColumnName="address_phone" />
-          <ScalarProperty Name="address_fixed_telephone" ColumnName="address_fixed_telephone" />
-          <ScalarProperty Name="province_name" ColumnName="province_name" />
-          <ScalarProperty Name="city_name" ColumnName="city_name" />
-          <ScalarProperty Name="county_name" ColumnName="county_name" />
-          <ScalarProperty Name="town_name" ColumnName="town_name" />
-          <ScalarProperty Name="area_str_ids" ColumnName="area_str_ids" />
-          <ScalarProperty Name="customer_address" ColumnName="customer_address" />
-          <ScalarProperty Name="is_master" ColumnName="is_master" />
-          <ScalarProperty Name="create_time" ColumnName="create_time" />
-          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
-          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Shopping_Token">
       <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Token">
         <MappingFragment StoreEntitySet="Shopping_Token">
@@ -486,6 +464,29 @@
           <ScalarProperty Name="product_id" ColumnName="product_id" />
           <ScalarProperty Name="customer_id" ColumnName="customer_id" />
           <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shopping_Customer_Address">
+      <EntityTypeMapping TypeName="Employee_Welfare_DBModel.Shopping_Customer_Address">
+        <MappingFragment StoreEntitySet="Shopping_Customer_Address">
+          <ScalarProperty Name="tage_name" ColumnName="tage_name" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="modified_time" ColumnName="modified_time" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="is_master" ColumnName="is_master" />
+          <ScalarProperty Name="customer_address" ColumnName="customer_address" />
+          <ScalarProperty Name="area_str_ids" ColumnName="area_str_ids" />
+          <ScalarProperty Name="town_name" ColumnName="town_name" />
+          <ScalarProperty Name="county_name" ColumnName="county_name" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="province_name" ColumnName="province_name" />
+          <ScalarProperty Name="address_fixed_telephone" ColumnName="address_fixed_telephone" />
+          <ScalarProperty Name="address_phone" ColumnName="address_phone" />
+          <ScalarProperty Name="address_email" ColumnName="address_email" />
+          <ScalarProperty Name="address_user_name" ColumnName="address_user_name" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

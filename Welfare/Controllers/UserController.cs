@@ -34,10 +34,9 @@ namespace Welfare.Controllers
         /// <summary>
         /// 添加地址
         /// </summary>
-        /// <param name="token"></param>
-        /// <param name="pamarAddress"></param>
+        /// <param name="paramAddress"></param>
         /// <returns></returns>
-        public IHttpActionResult addUserAddress(string token, pamarUserAddress paramAddress)
+        public IHttpActionResult addUserAddress(pamarUserAddress paramAddress)
         {
             try
             {
@@ -90,7 +89,7 @@ namespace Welfare.Controllers
                 #endregion
 
                 int isMaster = 0;
-                var tokenModel = tokenCustomerHelper.getCustomerToken(token, out OutMessage);
+                var tokenModel = tokenCustomerHelper.getCustomerToken();
                 int customerId = tokenModel.customerId;
                 List<int> listAreaId = new List<int>();
                 listAreaId.Add(paramAddress.provinceId);
@@ -160,15 +159,14 @@ namespace Welfare.Controllers
         /// <summary>
         /// 删除地址
         /// </summary>
-        /// <param name="token"></param>
         /// <param name="addressId"></param>
         /// <returns></returns>
         [HttpPost]
-        public IHttpActionResult deleteUserAddress(string token, int addressId)
+        public IHttpActionResult deleteUserAddress(int addressId)
         {
             try
             {
-                var tokenModel = tokenCustomerHelper.getCustomerToken(token, out OutMessage);
+                var tokenModel = tokenCustomerHelper.getCustomerToken();
                 int customerId = tokenModel.customerId;
                 BaseBLL<Shopping_Customer_Address> bllAddress = new BaseBLL<Shopping_Customer_Address>();
                 var addressModel = bllAddress.GetSingle(a => a.id == addressId && a.customer_id == customerId);
@@ -197,11 +195,10 @@ namespace Welfare.Controllers
         /// <summary>
         /// 修改地址
         /// </summary>
-        /// <param name="token"></param>
         /// <param name="paramAddress"></param>
         /// <returns></returns>
         [HttpPost]
-        public IHttpActionResult updateUserAddress(string token, pamarUserAddress paramAddress)
+        public IHttpActionResult updateUserAddress(pamarUserAddress paramAddress)
         {
             try
             {
@@ -253,7 +250,7 @@ namespace Welfare.Controllers
                 }
                 #endregion
 
-                var tokenModel = tokenCustomerHelper.getCustomerToken(token, out OutMessage);
+                var tokenModel = tokenCustomerHelper.getCustomerToken();
                 int customerId = tokenModel.customerId;
                 List<int> listAreaId = new List<int>();
                 listAreaId.Add(paramAddress.provinceId);
@@ -307,15 +304,14 @@ namespace Welfare.Controllers
         /// <summary>
         /// 设置默认地址
         /// </summary>
-        /// <param name="token"></param>
         /// <param name="addressId"></param>
         /// <returns></returns>
         [HttpPost]
-        public IHttpActionResult setMasterAddress(string token, int addressId)
+        public IHttpActionResult setMasterAddress(int addressId)
         {
             try
             {
-                var tokenModel = tokenCustomerHelper.getCustomerToken(token, out OutMessage);
+                var tokenModel = tokenCustomerHelper.getCustomerToken();
                 int customerId = tokenModel.customerId;
                 BaseBLL<Shopping_Customer_Address> bllAddress = new BaseBLL<Shopping_Customer_Address>();
                 var listAddress = bllAddress.GetList(a => a.is_delete == 0 && a.customer_id == customerId).ToList();
@@ -349,44 +345,61 @@ namespace Welfare.Controllers
         /// <summary>
         /// 全部地址
         /// </summary>
-        /// <param name="token"></param>
         /// <returns></returns>
         [HttpPost]
-        public IHttpActionResult getAllUserAddress(string token)
+        public IHttpActionResult getAllUserAddress()
         {
             try
             {
-                var tokenModel = tokenCustomerHelper.getCustomerToken(token, out OutMessage);
-                int customerId = tokenModel.customerId;
+                var tokenModel = tokenCustomerHelper.getCustomerToken();
                 BaseBLL<Shopping_Customer_Address> bllAddress = new BaseBLL<Shopping_Customer_Address>();
-                var listAddress = bllAddress.GetList(a => a.is_delete == 0 && a.customer_id == customerId).ToList();
-                List<showUserAddress> listShowAddress = new List<showUserAddress>();
+                var listAddress = bllAddress
+                    .GetList(a => a.is_delete == 0 && a.customer_id == tokenModel.customerId)
+                    .ToList();
                 foreach (var item in listAddress)
                 {
-                    showUserAddress showAddress = new showUserAddress()
-                    {
-                        address = item.customer_address,
-                        addressId = item.id,
-                        areaIds = item.area_str_ids,
-                        cityName = item.city_name,
-                        countyName = item.county_name,
-                        customerId = item.customer_id,
-                        email = item.address_email,
-                        fixedTelephone = string.IsNullOrEmpty(item.address_fixed_telephone) ? "" : RegexHelper.vagueFixeTelePhone(item.address_fixed_telephone),
-                        phone = RegexHelper.vaguePhone(item.address_phone),
-                        provinceName = item.province_name,
-                        townName = item.town_name,
-                        userName = item.address_user_name
-                    };
-                    listShowAddress.Add(showAddress);
-
+                    item.address_phone = RegexHelper.vaguePhone(item.address_phone);
                 }
+                
+                return Json(new Result()
+                {
+                    success = true,
+                    resultCode = "0000",
+                    result = listAddress
+                });
+            }
+            catch (Exception ex)
+            {
+                LogHelper.LogWriteBug("[获取所有用户地址]!", "ex:" + ex + "\r\nStackTrace:" + ex.StackTrace, "1");
+                return Json(new Result()
+                {
+                    success = false,
+                    resultCode = "5001",
+                    resultMessage = "服务异常，请稍后重试",
+                });
+            }
+        }
+
+        /// <summary>
+        /// 获取默认地址
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public IHttpActionResult getDefaultAddress()
+        {
+            try
+            {
+                var tokenModel = tokenCustomerHelper.getCustomerToken();
+                BaseBLL<Shopping_Customer_Address> bllAddress = new BaseBLL<Shopping_Customer_Address>();
+                var defAddress = bllAddress.GetSingle(a => a.is_delete == 0 && a.customer_id == tokenModel.customerId&&a.is_master==1);
+                if (defAddress != null)
+                    defAddress.address_phone = RegexHelper.vaguePhone(defAddress.address_phone);
 
                 return Json(new Result()
                 {
                     success = true,
                     resultCode = "0000",
-                    result = listShowAddress
+                    result = defAddress
                 });
             }
             catch (Exception ex)
@@ -407,7 +420,6 @@ namespace Welfare.Controllers
         /// <summary>
         /// 获取个人中心信息
         /// </summary>
-        /// <param name="deviceType">设备类型 1手机 2pc</param>
         /// <returns></returns>
         [HttpPost]
         public IHttpActionResult getUserInfo()

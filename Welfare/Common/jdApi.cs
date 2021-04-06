@@ -71,6 +71,11 @@ namespace Welfare.Common
         public static string urlOrderConfirm = "https://bizapi.jd.com/api/order/confirmOrder?";
 
         /// <summary>
+        /// 查询订单运费
+        /// </summary>
+        public static string urlOrderFreight = "https://bizapi.jd.com/api/order/getFreight?";
+
+        /// <summary>
         /// 接口复用
         /// </summary>
         /// <returns></returns>

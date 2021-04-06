@@ -632,4 +632,14 @@ namespace Welfare.Models.JDResponsSerialize
         public bool result { get; set; }
     }
     #endregion
+
+    #region 订单运费查询
+    public class resultFreight: JDResult
+    {
+        public int freight { get; set; }
+        public int baseFreight { get; set; }
+        public int remoteRegionFreight { get; set; }
+        public string remoteSku { get; set; }
+    }
+    #endregion
 }

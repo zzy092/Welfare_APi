@@ -1,0 +1,31 @@
+﻿2021-04-02 10:09:54:[购物车:添加商品]!ex:System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 DAL.BaseDAL`1.Add(T entity) 位置 D:\code\Welfare_New_System\Welfare_APi\DAL\BaseDAL.cs:行号 40
+   在 BLL.BaseBLL`1.Add(T model) 位置 D:\code\Welfare_New_System\Welfare_APi\BLL\BaseBLL.cs:行号 21
+   在 Welfare.Controllers.ShoppingJdController.addSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\ShoppingJdController.cs:行号 855
+StackTrace:   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 DAL.BaseDAL`1.Add(T entity) 位置 D:\code\Welfare_New_System\Welfare_APi\DAL\BaseDAL.cs:行号 40
+   在 BLL.BaseBLL`1.Add(T model) 位置 D:\code\Welfare_New_System\Welfare_APi\BLL\BaseBLL.cs:行号 21
+   在 Welfare.Controllers.ShoppingJdController.addSkuCart(Shopping_Cart shoppingCart) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\ShoppingJdController.cs:行号 855
+2021-04-02 19:15:21:[用户登陆]!ex:System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 Tools.DES.AesDecrpt(String toDecrpt) 位置 D:\code\Welfare_New_System\Welfare_APi\Tools\DES.cs:行号 72
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\LoginController.cs:行号 47
+StackTrace:   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 Tools.DES.AesDecrpt(String toDecrpt) 位置 D:\code\Welfare_New_System\Welfare_APi\Tools\DES.cs:行号 72
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\LoginController.cs:行号 47
+2021-04-02 19:20:14:[用户登陆]!ex:System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 Tools.DES.AesDecrpt(String toDecrpt) 位置 D:\code\Welfare_New_System\Welfare_APi\Tools\DES.cs:行号 72
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\LoginController.cs:行号 47
+StackTrace:   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 Tools.DES.AesDecrpt(String toDecrpt) 位置 D:\code\Welfare_New_System\Welfare_APi\Tools\DES.cs:行号 72
+   在 Welfare.Controllers.LoginController.accountLogin(ELoginModel eModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\LoginController.cs:行号 47

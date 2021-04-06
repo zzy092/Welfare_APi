@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="Employee_Welfare_DBModel.Cfg_Corp_Sale" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Employee_Welfare_DBModel.Shopping_Area" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Employee_Welfare_DBModel.Shopping_Category" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Employee_Welfare_DBModel.Shopping_Customer_Address" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Employee_Welfare_DBModel.Shopping_Token" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Employee_Welfare_DBModel.Welfare_Corporation" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Employee_Welfare_DBModel.Welfare_Corporation_Point_Log" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
@@ -33,6 +32,7 @@
         <EntityTypeShape EntityType="Employee_Welfare_DBModel.Welfare_Customer_Login_Log" Width="1.5" PointX="0.75" PointY="11.75" />
         <EntityTypeShape EntityType="Employee_Welfare_DBModel.Welfare_Customer" Width="1.5" PointX="9.375" PointY="8.75" />
         <EntityTypeShape EntityType="Employee_Welfare_DBModel.Shopping_Cart" Width="1.5" PointX="11.375" PointY="16.75" />
+        <EntityTypeShape EntityType="Employee_Welfare_DBModel.Shopping_Customer_Address" Width="1.5" PointX="0.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

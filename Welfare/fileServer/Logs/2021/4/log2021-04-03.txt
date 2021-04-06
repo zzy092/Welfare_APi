@@ -1,0 +1,67 @@
+﻿2021-04-03 19:26:28:[获取订单运费]!ex:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 Welfare.Controllers.OrderJdController.getOrderFreight(paramOrderFreight queryOrderFreight) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 592
+StackTrace:   在 Welfare.Controllers.OrderJdController.getOrderFreight(paramOrderFreight queryOrderFreight) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 592
+2021-04-03 19:28:25:[提交订单]!ex:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Welfare.Common.tokenCustomerHelper.getCustomerToken(String token) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Common\tokenCustomerHelper.cs:行号 40
+   在 Welfare.Controllers.OrderJdController.submitOrder(pamarSubitOrder paramModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 45
+StackTrace:   在 Welfare.Common.tokenCustomerHelper.getCustomerToken(String token) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Common\tokenCustomerHelper.cs:行号 40
+   在 Welfare.Controllers.OrderJdController.submitOrder(pamarSubitOrder paramModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 45
+2021-04-03 20:13:28:[获取订单运费]!ex:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 Welfare.Controllers.OrderJdController.getOrderFreight(paramOrderFreight queryOrderFreight) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 592
+StackTrace:   在 Welfare.Controllers.OrderJdController.getOrderFreight(paramOrderFreight queryOrderFreight) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 592
+2021-04-03 20:32:21:[获取订单运费]!ex:System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 Welfare.Controllers.OrderJdController.getOrderFreight(paramOrderFreight queryOrderFreight) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 592
+StackTrace:   在 Welfare.Controllers.OrderJdController.getOrderFreight(paramOrderFreight queryOrderFreight) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 592
+2021-04-03 20:40:24:[提交订单]!ex:System.Reflection.TargetException: 非静态方法需要一个目标。
+   在 System.Reflection.RuntimeMethodInfo.CheckConsistency(Object target)
+   在 System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.GetValue(Object obj, Object[] index)
+   在 System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryGetFieldOrPropertyValue(MemberExpression me, Object instance, Object& memberValue)
+   在 System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryEvaluatePath(Expression expression, ConstantExpression& constantExpression)
+   在 System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.EvaluateParameter(Object[] arguments)
+   在 System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   在 System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   在 System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   在 System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   在 System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   在 System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 DAL.BaseDAL`1.GetSingle(Expression`1 whereLambda) 位置 D:\code\Welfare_New_System\Welfare_APi\DAL\BaseDAL.cs:行号 223
+   在 BLL.BaseBLL`1.GetSingle(Expression`1 whereLambda) 位置 D:\code\Welfare_New_System\Welfare_APi\BLL\BaseBLL.cs:行号 48
+   在 Welfare.Common.tokenCustomerHelper.getCustomerToken() 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Common\tokenCustomerHelper.cs:行号 20
+   在 Welfare.Controllers.OrderJdController.submitOrder(pamarSubitOrder paramModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 45
+StackTrace:   在 System.Reflection.RuntimeMethodInfo.CheckConsistency(Object target)
+   在 System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.GetValue(Object obj, Object[] index)
+   在 System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryGetFieldOrPropertyValue(MemberExpression me, Object instance, Object& memberValue)
+   在 System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.TryEvaluatePath(Expression expression, ConstantExpression& constantExpression)
+   在 System.Data.Entity.Core.Objects.ELinq.QueryParameterExpression.EvaluateParameter(Object[] arguments)
+   在 System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   在 System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   在 System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   在 System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   在 System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   在 System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 DAL.BaseDAL`1.GetSingle(Expression`1 whereLambda) 位置 D:\code\Welfare_New_System\Welfare_APi\DAL\BaseDAL.cs:行号 223
+   在 BLL.BaseBLL`1.GetSingle(Expression`1 whereLambda) 位置 D:\code\Welfare_New_System\Welfare_APi\BLL\BaseBLL.cs:行号 48
+   在 Welfare.Common.tokenCustomerHelper.getCustomerToken() 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Common\tokenCustomerHelper.cs:行号 20
+   在 Welfare.Controllers.OrderJdController.submitOrder(pamarSubitOrder paramModel) 位置 D:\code\Welfare_New_System\Welfare_APi\Welfare\Controllers\OrderJdController.cs:行号 45

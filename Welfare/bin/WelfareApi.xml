@@ -149,6 +149,18 @@
             <param name="cid"></param>
             <returns></returns>
         </member>
+        <member name="M:Welfare.Common.jdCommon.getOrderFreight(System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            查询订单运费
+            </summary>
+            <param name="sku"></param>
+            <param name="province"></param>
+            <param name="city"></param>
+            <param name="county"></param>
+            <param name="town"></param>
+            <param name="paymentType"></param>
+            <returns></returns>
+        </member>
         <member name="M:Welfare.Common.phoneMsgHelper.isPhoneMsgCode(System.String,System.String,System.String@)">
             <summary>
             短信验证
@@ -229,6 +241,11 @@
         <member name="F:Welfare.Common.jdApi.urlOrderConfirm">
             <summary>
             确认预占库存订单
+            </summary>
+        </member>
+        <member name="F:Welfare.Common.jdApi.urlOrderFreight">
+            <summary>
+            查询订单运费
             </summary>
         </member>
         <member name="M:Welfare.Common.jdApi.requesUrl(System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
@@ -392,6 +409,19 @@
             <param name="eModel"></param>
             <returns></returns>
         </member>
+        <member name="M:Welfare.Controllers.LoginController.accountDefault">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.LoginController.accountLogin_old(WelfareApi.Models.Login.paramLogin)">
+            <summary>
+            帐号登陆
+            </summary>
+            <param name="pLogin"></param>
+            <returns></returns>
+        </member>
         <member name="M:Welfare.Controllers.LoginController.mobilePhoneMessageLogin(System.String,System.String,System.Int32,System.Int32)">
             <summary>
             短信登陆
@@ -450,22 +480,19 @@
             <summary>
             提交订单
             </summary>
-            <param name="token"></param>
-            <param name="addressId">收获地址id</param>
-            <param name="skus"></param>
+            <param name="paramModel"></param>
             <returns></returns>
         </member>
-        <member name="M:Welfare.Controllers.OrderJdController.payOrder(System.String,System.Int32,System.Int32,System.String)">
+        <member name="M:Welfare.Controllers.OrderJdController.payOrder(System.Int64,System.Int32,System.String)">
             <summary>
             支付订单
             </summary>
-            <param name="token"></param>
-            <param name="orderMastId"></param>
-             <param name="payMethod">支付方式</param>
-            <param name="code">短信验证码</param>
+            <param name="order_sn">订单编号</param>
+            <param name="payMethod">支付方式 [1,积分] [2,混合]，[3,微信]，[4,免积分]</param>
+            <param name="code"></param>
             <returns></returns>
         </member>
-        <member name="M:Welfare.Controllers.OrderJdController.getJDApiInfo(System.String,System.Int64)">
+        <member name="M:Welfare.Controllers.OrderJdController.getJDApiInfo(System.Int64)">
             <summary>
             京东接口查询
             </summary>
@@ -473,7 +500,7 @@
             <param name="jdorderid"></param>
             <returns></returns>
         </member>
-        <member name="M:Welfare.Controllers.OrderJdController.getOrders(System.String,System.Int32,System.Int32)">
+        <member name="M:Welfare.Controllers.OrderJdController.getOrders(System.Int32,System.Int32)">
             <summary>
             订单列表
             </summary>
@@ -482,12 +509,18 @@
             <param name="pageSize"></param>
             <returns></returns>
         </member>
-        <member name="M:Welfare.Controllers.OrderJdController.getOderDetail(System.String,System.Int32)">
+        <member name="M:Welfare.Controllers.OrderJdController.getOderDetail(System.Int32)">
             <summary>
             订单详情
             </summary>
             <param name="token"></param>
             <param name="orderMastId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.OrderJdController.getOrderFreight(WelfareApi.Models.Order.paramOrderFreight)">
+            <summary>
+            获取订单运费
+            </summary>
             <returns></returns>
         </member>
         <member name="M:Welfare.Controllers.OrderJdController.muban">
@@ -506,7 +539,7 @@
             <param name="logMessage">日志详情</param>
             <param name="type">1:支出  2：入账</param>
         </member>
-        <member name="M:Welfare.Controllers.OrderJdController.isOrderPriceChange(System.Int32,System.Decimal@,System.String@)">
+        <member name="M:Welfare.Controllers.OrderJdController.isOrderPriceChange(System.Int64,System.Decimal@,System.String@)">
             <summary>
             校验库里价格
             </summary>
@@ -546,50 +579,50 @@
             <param name="outErrorMessage"></param>
             <returns></returns>
         </member>
-        <member name="M:Welfare.Controllers.UserController.addUserAddress(System.String,Welfare.Models.UserAddress.pamarUserAddress)">
+        <member name="M:Welfare.Controllers.UserController.addUserAddress(Welfare.Models.UserAddress.pamarUserAddress)">
             <summary>
             添加地址
             </summary>
-            <param name="token"></param>
-            <param name="pamarAddress"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Welfare.Controllers.UserController.deleteUserAddress(System.String,System.Int32)">
-            <summary>
-            删除地址
-            </summary>
-            <param name="token"></param>
-            <param name="addressId"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Welfare.Controllers.UserController.updateUserAddress(System.String,Welfare.Models.UserAddress.pamarUserAddress)">
-            <summary>
-            修改地址
-            </summary>
-            <param name="token"></param>
             <param name="paramAddress"></param>
             <returns></returns>
         </member>
-        <member name="M:Welfare.Controllers.UserController.setMasterAddress(System.String,System.Int32)">
+        <member name="M:Welfare.Controllers.UserController.deleteUserAddress(System.Int32)">
             <summary>
-            设置默认地址
+            删除地址
             </summary>
-            <param name="token"></param>
             <param name="addressId"></param>
             <returns></returns>
         </member>
-        <member name="M:Welfare.Controllers.UserController.getAllUserAddress(System.String)">
+        <member name="M:Welfare.Controllers.UserController.updateUserAddress(Welfare.Models.UserAddress.pamarUserAddress)">
+            <summary>
+            修改地址
+            </summary>
+            <param name="paramAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.UserController.setMasterAddress(System.Int32)">
+            <summary>
+            设置默认地址
+            </summary>
+            <param name="addressId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.UserController.getAllUserAddress">
             <summary>
             全部地址
             </summary>
-            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Welfare.Controllers.UserController.getDefaultAddress">
+            <summary>
+            获取默认地址
+            </summary>
             <returns></returns>
         </member>
         <member name="M:Welfare.Controllers.UserController.getUserInfo">
             <summary>
             获取个人中心信息
             </summary>
-            <param name="deviceType">设备类型 1手机 2pc</param>
             <returns></returns>
         </member>
         <member name="M:Welfare.Controllers.UserController.muban">
@@ -604,11 +637,6 @@
             </summary>
         </member>
         <member name="T:Welfare.Models.UserAddress.pamarUserAddress">
-            <summary>
-            添加收获地址
-            </summary>
-        </member>
-        <member name="T:Welfare.Models.UserAddress.showUserAddress">
             <summary>
             添加收获地址
             </summary>

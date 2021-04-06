@@ -30,7 +30,6 @@ namespace Model
         public virtual DbSet<Cfg_Corp_Sale> Cfg_Corp_Sale { get; set; }
         public virtual DbSet<Shopping_Area> Shopping_Area { get; set; }
         public virtual DbSet<Shopping_Category> Shopping_Category { get; set; }
-        public virtual DbSet<Shopping_Customer_Address> Shopping_Customer_Address { get; set; }
         public virtual DbSet<Shopping_Token> Shopping_Token { get; set; }
         public virtual DbSet<Welfare_Corporation> Welfare_Corporation { get; set; }
         public virtual DbSet<Welfare_Corporation_Point_Log> Welfare_Corporation_Point_Log { get; set; }
@@ -53,5 +52,6 @@ namespace Model
         public virtual DbSet<Welfare_Customer_Login_Log> Welfare_Customer_Login_Log { get; set; }
         public virtual DbSet<Welfare_Customer> Welfare_Customer { get; set; }
         public virtual DbSet<Shopping_Cart> Shopping_Cart { get; set; }
+        public virtual DbSet<Shopping_Customer_Address> Shopping_Customer_Address { get; set; }
     }
 }

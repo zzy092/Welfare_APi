@@ -21,3 +21,11 @@ D:\code\Welfare_New_System\WelfareApi\Tools\obj\Debug\Tools.csproj.CoreCompileIn
 D:\code\Welfare_New_System\WelfareApi\Tools\obj\Debug\Tools.csproj.CopyComplete
 D:\code\Welfare_New_System\WelfareApi\Tools\obj\Debug\Tools.dll
 D:\code\Welfare_New_System\WelfareApi\Tools\obj\Debug\Tools.pdb
+D:\code\Welfare_New_System\Welfare_APi\Tools\bin\Debug\Tools.dll
+D:\code\Welfare_New_System\Welfare_APi\Tools\bin\Debug\Tools.pdb
+D:\code\Welfare_New_System\Welfare_APi\Tools\bin\Debug\EntityFramework.dll
+D:\code\Welfare_New_System\Welfare_APi\Tools\obj\Debug\Tools.csprojAssemblyReference.cache
+D:\code\Welfare_New_System\Welfare_APi\Tools\obj\Debug\Tools.csproj.CoreCompileInputs.cache
+D:\code\Welfare_New_System\Welfare_APi\Tools\obj\Debug\Tools.csproj.CopyComplete
+D:\code\Welfare_New_System\Welfare_APi\Tools\obj\Debug\Tools.dll
+D:\code\Welfare_New_System\Welfare_APi\Tools\obj\Debug\Tools.pdb

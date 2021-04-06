@@ -14,6 +14,7 @@ using Welfare.Models;
 using Welfare.Models.JDRequest;
 using Welfare.Models.JDResponsSerialize;
 using Welfare.Models.Order;
+using WelfareApi.Models.Order;
 
 namespace Welfare.Controllers
 {
@@ -34,16 +35,14 @@ namespace Welfare.Controllers
         /// <summary>
         /// 提交订单
         /// </summary>
-        /// <param name="token"></param>
-        /// <param name="addressId">收获地址id</param>
-        /// <param name="skus"></param>
+        /// <param name="paramModel"></param>
         /// <returns></returns>
         [HttpPost]
         public IHttpActionResult submitOrder([FromBody] pamarSubitOrder paramModel)
         {
             try
             {
-                var tokenModel = tokenCustomerHelper.getCustomerToken(paramModel.token);
+                var tokenModel = tokenCustomerHelper.getCustomerToken();
                 var corpSale = jdCommon.getCorpSale(tokenModel.corpid);
                 var arrSkus = paramModel.skus.Select(a => a.skuId).ToList().ToArray();
                 BaseBLL<Shopping_Cart> bllCate = new BaseBLL<Shopping_Cart>();
@@ -249,7 +248,7 @@ namespace Welfare.Controllers
                         item.modified_time = DateTime.Now;
                         bllCate.Modify(item);
                     }
-
+                    var newCart = bllCate.GetList(a=>a.is_delete==0&&a.customer_id==tokenModel.customerId).ToList();
 
                     if (isSubmitOk == true)
                     {
@@ -257,8 +256,13 @@ namespace Welfare.Controllers
                         return Json(new Result()
                         {
                             success = true,
-                            resultCode = "0000"
-                        });
+                            resultCode = "0000",
+                            result = new
+                            {
+                                newCart=newCart,
+                                order_sn= masterOrder.order_sn
+                            }
+                        }); 
                     }
                     else
                     {
@@ -288,24 +292,23 @@ namespace Welfare.Controllers
         /// <summary>
         /// 支付订单
         /// </summary>
-        /// <param name="token"></param>
-        /// <param name="orderMastId"></param>
-        ///  <param name="payMethod">支付方式</param>
-        /// <param name="code">短信验证码</param>
+        /// <param name="order_sn">订单编号</param>
+        /// <param name="payMethod">支付方式 [1,积分] [2,混合]，[3,微信]，[4,免积分]</param>
+        /// <param name="code"></param>
         /// <returns></returns>
         [HttpPost]
-        public IHttpActionResult payOrder(string token, int orderMastId, int payMethod, string code)
+        public IHttpActionResult payOrder(long order_sn, int payMethod, string code)
         {
             try
             {
                 string errMsg = "";
-                var tokenModel = tokenCustomerHelper.getCustomerToken(token);
+                var tokenModel = tokenCustomerHelper.getCustomerToken();
                 BaseBLL<Welfare_Customer> bllCustomer = new BaseBLL<Welfare_Customer>();
                 var customerModel = bllCustomer.GetSingle(a => a.customer_id == tokenModel.customerId);
                 BaseBLL<Shopping_Order_Master> bllMaster = new BaseBLL<Shopping_Order_Master>();
 
                 //订单状态校验
-                var mastOrder = bllMaster.GetSingle(a => a.customer_id == tokenModel.customerId && a.order_id == orderMastId && a.is_delete == 0);
+                var mastOrder = bllMaster.GetSingle(a => a.customer_id == tokenModel.customerId && a.order_sn == order_sn && a.is_delete == 0);
                 if (mastOrder == null)
                     return Json(new Result
                     {
@@ -345,7 +348,7 @@ namespace Welfare.Controllers
 
                 //价格校验
                 decimal payMoney = 0;
-                var isChange = isOrderPriceChange(orderMastId, out payMoney, out errMsg);
+                var isChange = isOrderPriceChange(order_sn, out payMoney, out errMsg);
                 if (isChange)
                     return Json(new Result()
                     {
@@ -436,7 +439,7 @@ namespace Welfare.Controllers
         /// <param name="jdorderid"></param>
         /// <returns></returns>
         [HttpPost]
-        public IHttpActionResult getJDApiInfo(string token, long jdorderid)
+        public IHttpActionResult getJDApiInfo( long jdorderid)
         {
             try
             {
@@ -483,12 +486,12 @@ namespace Welfare.Controllers
         /// <param name="pageSize"></param>
         /// <returns></returns>
         [HttpPost]
-        public IHttpActionResult getOrders(string token, int pageIndex = 1, int pageSize = 50)
+        public IHttpActionResult getOrders( int pageIndex = 1, int pageSize = 50)
         {
             try
             {
                 int pageCount = 0;
-                var tokenModel = tokenCustomerHelper.getCustomerToken(token);
+                var tokenModel = tokenCustomerHelper.getCustomerToken();
                 List<showOrder> listShowOrder = new List<showOrder>();
                 BaseBLL<Shopping_Order_Master> bllOrderMaster = new BaseBLL<Shopping_Order_Master>();
                 BaseBLL<Shopping_Order_Detail> bllOrderDetail = new BaseBLL<Shopping_Order_Detail>();
@@ -530,11 +533,11 @@ namespace Welfare.Controllers
         /// <param name="orderMastId"></param>
         /// <returns></returns>
         [HttpPost]
-        public IHttpActionResult getOderDetail(string token, int orderMastId)
+        public IHttpActionResult getOderDetail( int orderMastId)
         {
             try
             {
-                var tokenModel = tokenCustomerHelper.getCustomerToken(token);
+                var tokenModel = tokenCustomerHelper.getCustomerToken();
 
                 BaseBLL<Shopping_Order_Detail> bllOrderDetail = new BaseBLL<Shopping_Order_Detail>();
                 var listDetail = bllOrderDetail.GetList(a => a.is_delete == 0 && a.order_id == orderMastId).ToList();
@@ -580,7 +583,36 @@ namespace Welfare.Controllers
             }
         }
 
-
+        /// <summary>
+        /// 获取订单运费
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public IHttpActionResult getOrderFreight([FromBody] paramOrderFreight queryOrderFreight)
+        {
+            try
+            {
+                var arrArea = queryOrderFreight.defAddress.Split('_');
+                var sku = JsonConvert.SerializeObject(queryOrderFreight.skuUums);
+                var model = jdCommon.getOrderFreight(sku,arrArea[0], arrArea[1], arrArea[2], arrArea[3],4);
+                return Json(new Result()
+                {
+                    success = true,
+                    resultCode = "0000",
+                    result=model
+                });
+            }
+            catch (Exception ex)
+            {
+                LogHelper.LogWriteBug("[获取订单运费]!", "ex:" + ex + "\r\nStackTrace:" + ex.StackTrace, "1");
+                return Json(new Result()
+                {
+                    success = false,
+                    resultCode = "5001",
+                    resultMessage = ERRMESSAGE,
+                });
+            }
+        }
 
         /// <summary>
         /// 复制粘贴用
@@ -668,14 +700,14 @@ namespace Welfare.Controllers
         /// 校验库里价格
         /// </summary>
         /// <returns></returns>
-        private bool isOrderPriceChange(int masterId, out decimal payMoney, out string ErrorMessage)
+        private bool isOrderPriceChange(long order_sn, out decimal payMoney, out string ErrorMessage)
         {
             bool isok = false;
             string resultMsg = "";
             decimal resultPayMoney = 0;
 
             BaseBLL<Shopping_Order_Master> bllOrderMaster = new BaseBLL<Shopping_Order_Master>();
-            var masterModel = bllOrderMaster.GetSingle(a => a.order_id == masterId && a.is_delete == 0);
+            var masterModel = bllOrderMaster.GetSingle(a => a.order_sn == order_sn && a.is_delete == 0);
             if (masterModel == null)
             {
                 isok = true;

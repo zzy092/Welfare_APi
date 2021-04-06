@@ -140,6 +140,7 @@
     </Compile>
     <Compile Include="Models\HomePage\showHomePageInfo.cs" />
     <Compile Include="Models\Login\paramLogin.cs" />
+    <Compile Include="Models\Order\paramOrderFreight.cs" />
     <Compile Include="Models\Order\showOrder.cs" />
     <Compile Include="Models\User\pamarUserAddress.cs" />
     <Compile Include="Models\User\showMessage.cs" />
